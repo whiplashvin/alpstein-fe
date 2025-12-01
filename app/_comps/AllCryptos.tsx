@@ -119,14 +119,14 @@ function CryptoComp({ d, calc }: { d: CryptoData; calc: (num: number) => string 
       className={cn(
         "cursor-pointer rounded-md p-2",
         // "shadow-[var(--shadow)] transition-shadow duration-500 ease-in-out hover:bg-[var(--cardhover)]",
-        "border border-[var(--stats-comp-inner-border)]/50 bg-[var(--stats-comp-inner)]/60 backdrop-blur-xl",
+        "border border-[var(--stats-comp-inner-border)]/50 bg-[var(--stats-comp-inner)]/60",
         // "shadow-[0px_1px_4px_0px_rgba(255,255,255,0.1)_inset,0px_-1px_2px_0px_rgba(255,255,255,0.1)_inset]",
         `${currentCryptoId === d.id ? "bg-[var(--cardhover)]" : ""}`,
         "flex flex-col gap-1.5 md:gap-2",
         "relative"
       )}
     >
-      <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-white/50 to-transparent"></span>
+      <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-[var(--primarytext)]/50 to-transparent"></span>
       <div className="flex items-center justify-between">
         <div className="flex w-full items-center justify-between">
           <div className="flex items-center gap-2">

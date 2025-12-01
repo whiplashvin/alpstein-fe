@@ -209,7 +209,7 @@ function Comp({
       <div className="flex items-center justify-center gap-1 pl-3 md:pl-6">
         <span>{index + 1}.</span>
         <Image height={20} width={20} src={`/${symbol}.png`} alt="crypto-image" />
-        <span className="text-[8px] md:text-xs">{symbol}</span>
+        <span className="hidden text-[8px] md:block md:text-xs">{symbol}</span>
       </div>
       <div className="flex w-full items-center justify-center">
         <button

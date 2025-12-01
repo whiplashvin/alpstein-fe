@@ -75,7 +75,7 @@ export function GridBackgroundDemo() {
           "bg-[var(--background)]"
         )}
       />
-      <div className="md2:mt-40 z-10 mt-24 flex w-full flex-col items-center justify-center gap-5 md:mt-36 lg:mt-30 lg:h-1/3 lg:gap-8">
+      <div className="md2:mt-40 z-10 mt-32 flex w-full flex-col items-center justify-center gap-5 md:mt-36 lg:mt-30 lg:h-1/3 lg:gap-8">
         <motion.h2
           initial={{
             opacity: 0,
@@ -92,11 +92,11 @@ export function GridBackgroundDemo() {
             ease: "easeIn",
             delay: 0.2,
           }}
-          className="px-4 text-center text-3xl font-light text-[var(--primarytext)]/80 transition-colors duration-700 md:px-14 md:text-5xl lg:px-44 lg:text-6xl"
+          className="px-0 text-center text-5xl font-light text-[var(--primarytext)]/80 transition-colors duration-700 md:px-14 md:text-5xl lg:px-44 lg:text-6xl"
         >
           {/* Cut through crypto chaos, with{" "}
           <span className="font-medium text-[var(--primarytext)]/60">intelligent</span> insights. */}
-          Intelligent{" "}
+          AI-powered{" "}
           <span className="font-semibold text-[var(--primarytext)]/90">real-time crypto</span>{" "}
           insights. Sans noise.
         </motion.h2>

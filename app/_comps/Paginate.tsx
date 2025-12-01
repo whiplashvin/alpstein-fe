@@ -5,7 +5,7 @@ import { GoChevronLeft } from "react-icons/go";
 import { GoChevronRight } from "react-icons/go";
 import { useAllCryptos, usePaginate } from "../lib/zustand";
 
-function Paginate() {
+function Paginate({ bottom }: { bottom: string }) {
   const { setAllCryptos } = useAllCryptos();
   const {
     Limit,
@@ -18,7 +18,9 @@ function Paginate() {
     FirstSeenId,
   } = usePaginate();
   return (
-    <div className="absolute inset-x-0 bottom-5 flex h-10 w-full items-center justify-center gap-4">
+    <div
+      className={`absolute inset-x-0 bottom-${bottom} flex h-10 w-full items-center justify-center gap-4`}
+    >
       {HasPrevPage && (
         <button
           className="flex cursor-pointer items-center justify-center rounded-full p-1 text-[var(--primarytext)] hover:border hover:border-[var(--secondarytext)]"
