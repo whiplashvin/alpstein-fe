@@ -111,8 +111,7 @@ function Trades() {
       <div
         ref={ref}
         className={cn(
-          "relative my-14 flex h-[calc(100vh-100px)] w-full",
-          // "min-w-[calc(100vw-112px)]",
+          "my-14 flex h-[calc(100vh-120px)] w-full",
           "flex-col overflow-y-scroll lg:my-0 lg:mt-20 lg:pb-5",
           "3xl:max-h-[calc(1000px-100px)]"
         )}
@@ -150,6 +149,11 @@ function Trades() {
                 closeTime={d.closureat}
               />
             ))}
+            {loadingMore && (
+              <div className="flex w-full justify-center p-1">
+                <Spinner showPrice={false} />
+              </div>
+            )}
           </>
         )}
       </div>
@@ -161,11 +165,11 @@ function Trades() {
           backgroundSize: "10px 10px",
         }}
       ></div>
-      {loadingMore && (
-        <div className="absolute bottom-14 left-0 flex w-full justify-center p-1 lg:bottom-2">
+      {/* {loadingMore && (
+        <div className="absolute bottom-14 left-0 my-5 flex w-full justify-center bg-lime-500 p-1 lg:bottom-2">
           <Spinner showPrice={false} />
         </div>
-      )}
+      )} */}
     </div>
   );
 }
