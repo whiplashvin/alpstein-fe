@@ -67,9 +67,9 @@ function Layout({ children }: { children: React.ReactNode }) {
           <div className="3xl:h-[calc(1000px-100px)] relative md:h-[calc(100vh-114px)] lg:mt-14 2xl:mt-12">
             <AllCryptos />
             <Paginate bottom={"0"} />
+            <div className="absolute top-0 -right-2 z-10 hidden h-full w-[0.5px] bg-gradient-to-t from-transparent from-[-10%] via-zinc-700 via-50% to-transparent to-110% md:block 2xl:max-h-[calc(1000px-100px)]"></div>
           </div>
         )}
-        <div className="absolute top-0 right-0 z-10 hidden h-full w-[0.5px] bg-gradient-to-t from-transparent from-[-10%] via-zinc-700 via-50% to-transparent to-110% md:block 2xl:max-h-[calc(1000px-100px)]"></div>
       </div>
       <main className={cn("h-screen w-full px-2")}>{children}</main>
     </div>

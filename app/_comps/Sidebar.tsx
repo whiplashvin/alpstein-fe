@@ -34,7 +34,7 @@ function Sidebar() {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         animate={{ left: 1 }}
         ref={childRef}
-        className="relative h-full w-2/3 bg-[var(--background)] bg-rose-500 px-2 py-4 md:w-1/3"
+        className="relative h-full w-2/3 bg-[var(--background)] px-2 py-4 md:w-1/3"
       >
         <AllCryptos />
         <Paginate bottom={"5"} />

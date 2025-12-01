@@ -4,6 +4,7 @@ import { useEffect, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import { cn } from "../lib/utils";
+import { GiMountaintop } from "react-icons/gi";
 // import { GiMountaintop } from "react-icons/gi";
 
 function PremiumCard() {
@@ -51,29 +52,28 @@ function PremiumCard() {
         backgroundImage,
       }}
       className={cn(
-        "l:h-full l2:h-full relative grid h-full min-h-0 w-full grid-rows-[3fr_1fr] rounded-2xl rounded-xl p-2 md:h-full lg:h-full",
+        "relative grid h-full min-h-0 w-full grid-rows-[3fr_1fr] rounded-2xl rounded-xl p-2",
         // "shadow-[var(--shadow)] transition-shadow duration-500"
         // "border border-[var(--stats-comp-bg)] bg-[var(--stats-comp-bg)]/20 backdrop-blur-xl",
-        "flex flex-col gap-6 bg-[var(--stats-comp-inner)]/60"
+        "flex flex-col gap-6 bg-[var(--stats-comp-inner)]/60",
+        "flex flex-col justify-between"
       )}
     >
-      {/* <div className="l:p-0 l:gap-3 l2:gap-4 flex flex-col gap-10">
-        <div className="flex cursor-pointer items-center gap-2 p-6 text-sm text-[var(--logostroke)] opacity-90 transition-colors duration-700 md:text-sm lg:text-sm">
-          <span>
-            <GiMountaintop size={30} />
-          </span>
-          <span>Alpstein</span>
-        </div>
-        <div className="flex w-full flex-col gap-3 p-4">
-          <h2 className="text-sm font-extralight text-[var(--primarytext)] md:text-sm">
-            Become a Premium Member
-          </h2>
-          <div>
-            <p className="text-[10px] text-zinc-500 md:text-xs">Never miss an opportunity.</p>
-            <p className="text-[10px] text-zinc-500 md:text-xs">
-              Get instantly notified whenever a news is updated.
-            </p>
-          </div>
+      <div className="l:p-0 flex cursor-pointer items-center gap-2 p-6 text-sm text-[var(--logostroke)] opacity-90 transition-colors duration-700 md:text-sm lg:p-4 lg:text-sm">
+        <span>
+          <GiMountaintop size={30} />
+        </span>
+        <span>Alpstein</span>
+      </div>
+      <div className="l:p-0 flex w-full flex-col gap-3 p-4 lg:p-4">
+        <h2 className="text-sm font-extralight text-[var(--primarytext)] md:text-sm">
+          Become a Premium Member
+        </h2>
+        <div>
+          <p className="text-[10px] text-zinc-500 md:text-xs">Never miss an opportunity.</p>
+          <p className="text-[10px] text-zinc-500 md:text-xs">
+            Get instantly notified whenever a news is updated.
+          </p>
         </div>
       </div>
       <div className="z-10 flex w-full flex-col gap-2 px-0">
@@ -95,7 +95,7 @@ function PremiumCard() {
         >
           Become a member
         </button>
-      </div> */}
+      </div>
       <div className="absolute inset-0 z-0">
         <Canvas>
           <Stars radius={200} count={200} factor={10} fade speed={1} />

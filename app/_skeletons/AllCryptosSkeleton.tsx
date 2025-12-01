@@ -2,7 +2,7 @@ import { cn } from "../lib/utils";
 
 function AllCryptosSkeleton() {
   return (
-    <ul className={`relative mt-24 flex flex-col gap-2 overflow-y-auto`}>
+    <ul className={`relative mt-14 flex flex-col gap-2 overflow-y-auto`}>
       {Array.from({ length: 9 }).map((_, index) => (
         <CryptoComp key={index} />
       ))}

@@ -34,8 +34,8 @@ function Navbar() {
         "flex justify-between",
         "2xl:py-2",
         // "mx-auto max-w-[1512px]",
-        "mx-auto max-w-7xl border-x border-[var(--cardborder)]/50",
-        `${path === "/" ? "bg-transparent" : "bg-[var(--background)]"}`
+        "mx-auto max-w-7xl",
+        `${path === "/" ? "bg-transparent" : "border-x border-[var(--cardborder)]/50 bg-[var(--background)]"}`
         // "bg-rose-500"
       )}
     >
