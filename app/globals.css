@@ -43,6 +43,7 @@
   --stats-comp-bg: #d4d4d8;
   --stats-comp-inner: #f4f4f5;
   --stats-comp-inner-border: #9f9fa9;
+  --hero-img-border: #ffffff;
 }
 
 .dark:root {
@@ -92,6 +93,7 @@
   --stats-comp-bg: #27272a;
   --stats-comp-inner: #09090b;
   --stats-comp-inner-border: #27272a;
+  --hero-img-border: #262626;
 }
 /* @media (prefers-color-scheme: dark) {
   :root {

@@ -1,17 +1,17 @@
 "use client";
 import { cn } from "../lib/utils";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import InfiniteSlide from "./InfiniteSlide";
 // import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import Button2 from "./Button2";
 import { useShowSigninModal, useUser } from "../lib/zustand";
-import HeroImage from "./HeroImage";
+import Image from "next/image";
 
 export function Hero() {
   const imageRef = useRef<HTMLDivElement | null>(null);
-  // const [imageUrl, setImageUrl] = useState("/hero-white.png");
+  const [imageUrl, setImageUrl] = useState("/hero-img-light.png");
   // const rootStyles = getComputedStyle(document.documentElement);
   // const defaultUrl = rootStyles.getPropertyValue("--url").trim();
   const { scrollYProgress } = useScroll({ target: imageRef, offset: ["start end", "end start"] });
@@ -23,12 +23,12 @@ export function Hero() {
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
-      // const isDark = document.documentElement.classList.contains("dark");
-      // if (isDark) {
-      //   setImageUrl("/landing-dark.png");
-      // } else {
-      //   setImageUrl("/hero-white.png");
-      // }
+      const isDark = document.documentElement.classList.contains("dark");
+      if (isDark) {
+        setImageUrl("/hero-img-dark.png");
+      } else {
+        setImageUrl("/hero-img-light.png");
+      }
     });
     observer.observe(document.documentElement, {
       attributes: true,
@@ -37,7 +37,7 @@ export function Hero() {
 
     // Initial check
     if (document.documentElement.classList.contains("dark")) {
-      // setImageUrl("/landing-dark.png");
+      setImageUrl("/hero-img-dark.png");
     }
     return () => observer.disconnect();
   }, []);
@@ -202,26 +202,29 @@ export function Hero() {
         style={{
           scale: translateScale,
           // filter: useMotionTemplate`blur(${translateBlur}px)`,
+          maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)",
         }}
         ref={imageRef}
         // className="l:bottom-25 l:w-[850px] absolute left-1/2 z-10 hidden -translate-x-1/2 md:bottom-65 md:block md:w-[650px] lg:bottom-20 lg:w-[900px]"
-        className={cn(
-          "mx-auto hidden h-96 w-[80%] rounded-xl border border-white/70 bg-white/50 p-2 backdrop-blur-xl md:block"
+        className={
+          cn(
+            "mx-auto h-full max-h-fit w-[90%] rounded-2xl border border-[var(--hero-img-border)]/70 bg-[var(--hero-img-border)]/30 p-2 backdrop-blur-xl md:w-[80%]"
+          )
           // "bg-radial-[at_20%_20%] from-transparent from-60% via-blue-300/20 via-80% to-blue-400/20 to-100%"
-        )}
+        }
       >
-        <HeroImage />
+        {/* <HeroImage /> */}
         {/* <div className="absolute bottom-0 left-1/2 h-[400px] w-[1000px] -translate-x-1/2 rounded-t-xl bg-[var(--background)] bg-lime-500 opacity-10"></div> */}
-        {/* <Image
+        <Image
           src={imageUrl}
           height={400}
           width={1100}
           alt="temp"
           className="rounded-t-xl bg-[var(--background)]"
-          style={{
-            maskImage: "linear-gradient(to bottom, black 90%, transparent 100%)",
-          }}
-        /> */}
+          // style={{
+          //   maskImage: "linear-gradient(to bottom, black 90%, transparent 100%)",
+          // }}
+        />
       </motion.div>
     </div>
   );
