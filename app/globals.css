@@ -44,6 +44,9 @@
   --stats-comp-inner: #f4f4f5;
   --stats-comp-inner-border: #9f9fa9;
   --hero-img-border: #ffffff;
+  --bg-section: #a1a1a1;
+  --svg-path: rgba(200, 200, 200, 0.5);
+  --grid-dots: rgba(0, 0, 0, 0.1);
 }
 
 .dark:root {
@@ -94,6 +97,9 @@
   --stats-comp-inner: #09090b;
   --stats-comp-inner-border: #27272a;
   --hero-img-border: #262626;
+  --bg-section: #262626;
+  --svg-path: rgba(58, 57, 57, 0.5);
+  --grid-dots: rgba(255, 255, 255, 0.1);
 }
 /* @media (prefers-color-scheme: dark) {
   :root {

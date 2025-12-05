@@ -7,7 +7,8 @@ function BackgroundGrid() {
         className={cn(
           "absolute inset-0 z-10 h-full w-full opacity-30",
           "bg-[radial-gradient(70%_45%_at_50%_0%,_#a3b3ff_15%,_var(--background))]",
-          "md:bg-[radial-gradient(70%_50%_at_50%_0%,_#a3b3ff_15%,_var(--background))]"
+          "md:bg-[radial-gradient(70%_50%_at_50%_0%,_#a3b3ff_15%,_var(--background))]",
+          "3xl:bg-[radial-gradient(70%_30%_at_50%_0%,_#a3b3ff_15%,_var(--background))]"
         )}
       />
       <div

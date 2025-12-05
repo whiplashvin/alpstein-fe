@@ -1,5 +1,8 @@
+"use client";
 import BackgroundGrid from "./_comps/BackgroundGrid";
+import Features from "./_comps/Features";
 import { Hero } from "./_comps/Hero";
+import HowItWorks from "./_comps/HowItWorks";
 import SigninModal from "./_comps/SigninModal";
 
 export default function Home() {
@@ -13,9 +16,8 @@ export default function Home() {
       <div className="absolute inset-x-0 top-0 mx-auto h-full w-full max-w-7xl">
         <Hero />
         <SigninModal />
-        <div className="flex h-screen items-center justify-center bg-[var(--background)]">
-          <h1 className="text-4xl text-black dark:text-white">Test</h1>
-        </div>
+        <Features />
+        <HowItWorks />
       </div>
     </div>
   );

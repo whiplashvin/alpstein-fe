@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "../lib/utils";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import InfiniteSlide from "./InfiniteSlide";
 // import Image from "next/image";
@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export function Hero() {
   const imageRef = useRef<HTMLDivElement | null>(null);
-  const [imageUrl, setImageUrl] = useState("/hero-img-light.png");
+  // const [imageUrl, setImageUrl] = useState("/hero-img-light.png");
   // const rootStyles = getComputedStyle(document.documentElement);
   // const defaultUrl = rootStyles.getPropertyValue("--url").trim();
   const { scrollYProgress } = useScroll({ target: imageRef, offset: ["start end", "end start"] });
@@ -23,12 +23,12 @@ export function Hero() {
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
-      const isDark = document.documentElement.classList.contains("dark");
-      if (isDark) {
-        setImageUrl("/hero-img-dark.png");
-      } else {
-        setImageUrl("/hero-img-light.png");
-      }
+      // const isDark = document.documentElement.classList.contains("dark");
+      // if (isDark) {
+      //   setImageUrl("/hero-img-dark.png");
+      // } else {
+      //   setImageUrl("/hero-img-light.png");
+      // }
     });
     observer.observe(document.documentElement, {
       attributes: true,
@@ -37,7 +37,7 @@ export function Hero() {
 
     // Initial check
     if (document.documentElement.classList.contains("dark")) {
-      setImageUrl("/hero-img-dark.png");
+      // setImageUrl("/hero-img-dark.png");
     }
     return () => observer.disconnect();
   }, []);
@@ -45,8 +45,7 @@ export function Hero() {
   const navigate = useRouter();
 
   return (
-    // <div className="relative flex h-[100%] w-[100%] flex-col items-center bg-[var(--background)]">
-    <div className="relative flex h-screen w-full flex-col items-center gap-12 bg-transparent">
+    <div className="3xl:gap-18 relative flex w-full flex-col items-center gap-16">
       <div
         // className={cn(
         //   "absolute inset-0 z-10 h-full w-full opacity-30",
@@ -77,7 +76,7 @@ export function Hero() {
           "bg-[var(--background)]"
         )}
       /> */}
-      <div className="md2:mt-40 z-10 mt-22 flex w-full flex-col items-center gap-5 md:mt-36 lg:mt-30 lg:gap-5">
+      <div className="md2:mt-40 3xl:mt-52 3xl:gap-8 z-10 mt-22 flex w-full flex-col items-center gap-5 md:mt-36 lg:mt-30 lg:gap-5">
         <motion.h2
           initial={{
             opacity: 0,
@@ -94,7 +93,7 @@ export function Hero() {
             ease: "easeIn",
             delay: 0.2,
           }}
-          className="w-4/5 text-center text-2xl font-light text-[var(--primarytext)]/80 transition-colors duration-700 md:text-5xl lg:w-2/3 lg:text-6xl"
+          className="3xl:text-7xl 3xl:w-4/5 w-full px-2 text-center text-2xl font-light text-[var(--primarytext)]/80 transition-colors duration-700 md:text-5xl lg:w-2/3 lg:text-6xl"
         >
           AI-powered{" "}
           <span className="font-semibold text-[var(--primarytext)]/90">real-time crypto</span>{" "}
@@ -118,7 +117,7 @@ export function Hero() {
             ease: "easeIn",
             delay: 0.2,
           }}
-          className="w-full px-6 text-center text-xs font-extralight tracking-wide text-[var(--primarytext)]/70 transition-colors duration-500 md:w-2/3 md:px-0 md:text-base lg:leading-5"
+          className="3xl:text-lg 3xl:w-4/5 w-full px-6 text-center text-xs font-extralight tracking-wide text-[var(--primarytext)]/70 transition-colors duration-500 md:w-2/3 md:px-0 md:text-base lg:leading-5"
         >
           Stay ahead with intelligent crypto analysis. Intense, data heavy blogs cleansed and made
           actionable.
@@ -202,25 +201,26 @@ export function Hero() {
         style={{
           scale: translateScale,
           // filter: useMotionTemplate`blur(${translateBlur}px)`,
-          maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)",
+          // maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)",
         }}
         ref={imageRef}
         // className="l:bottom-25 l:w-[850px] absolute left-1/2 z-10 hidden -translate-x-1/2 md:bottom-65 md:block md:w-[650px] lg:bottom-20 lg:w-[900px]"
         className={
           cn(
-            "mx-auto h-full max-h-fit w-[90%] rounded-2xl border border-[var(--hero-img-border)]/70 bg-[var(--hero-img-border)]/30 p-2 backdrop-blur-xl md:w-[80%]"
+            "relative mx-auto h-full max-h-fit w-[90%] rounded-2xl border border-[var(--hero-img-border)]/70 bg-[var(--hero-img-border)]/30 p-2 backdrop-blur-xl md:w-[80%]"
           )
           // "bg-radial-[at_20%_20%] from-transparent from-60% via-blue-300/20 via-80% to-blue-400/20 to-100%"
         }
       >
+        <div className="absolute inset-0 h-full w-full rounded-xl dark:bg-neutral-800/30"></div>
         {/* <HeroImage /> */}
         {/* <div className="absolute bottom-0 left-1/2 h-[400px] w-[1000px] -translate-x-1/2 rounded-t-xl bg-[var(--background)] bg-lime-500 opacity-10"></div> */}
         <Image
-          src={imageUrl}
-          height={400}
+          src={"/hero.png"}
+          height={200}
           width={1100}
           alt="temp"
-          className="rounded-t-xl bg-[var(--background)]"
+          className="rounded-xl"
           // style={{
           //   maskImage: "linear-gradient(to bottom, black 90%, transparent 100%)",
           // }}
