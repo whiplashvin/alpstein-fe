@@ -4,7 +4,7 @@ import { cn } from "../lib/utils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const MOBLE_BREAKPOINT = 430;
+// const MOBLE_BREAKPOINT = 430;
 const TABLET_BREAKPOINT = 768;
 const LAPTOP_BREAKPOINT = 1024;
 
@@ -23,65 +23,102 @@ type Block = {
   right?: string;
 };
 function HowItWorks() {
-  const [cpuChip, setCpuChip] = useState(window?.innerWidth >= LAPTOP_BREAKPOINT ? "24" : "20");
-  const [binance, setBinance] = useState<Binance>(
-    window?.innerWidth >= LAPTOP_BREAKPOINT
-      ? { logo: "24", svgH: "130", svgW: "10" }
-      : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
-        ? { logo: "20", svgH: "100", svgW: "10" }
-        : { logo: "14", svgH: "80", svgW: "10" }
-  );
-  const [block, setBlock] = useState<Block>(
-    window?.innerWidth >= LAPTOP_BREAKPOINT
-      ? { logo: "24", svgH: "80", svgW: "450" }
-      : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
-        ? { logo: "14", svgH: "40", svgW: "250" }
-        : { logo: "14", svgH: "30", svgW: "150" }
-  );
-  const [tele, setTele] = useState<Block>(
-    window?.innerWidth >= LAPTOP_BREAKPOINT
-      ? { logo: "24", svgH: "10", svgW: "450" }
-      : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
-        ? { logo: "14", svgH: "10", svgW: "280" }
-        : { logo: "14", svgH: "10", svgW: "150" }
-  );
-  const [news, setNews] = useState<Block>(
-    window?.innerWidth >= LAPTOP_BREAKPOINT
-      ? { logo: "24", svgH: "80", svgW: "450" }
-      : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
-        ? { logo: "14", svgH: "40", svgW: "250" }
-        : { logo: "14", svgH: "30", svgW: "150" }
-  );
-  function handleResize() {
-    if (window?.innerWidth <= MOBLE_BREAKPOINT) {
-      console.log("MOBILE");
-      setCpuChip("20");
-      setBinance({ logo: "14", svgH: "80", svgW: "10" });
-      setBlock({ logo: "14", svgH: "30", svgW: "150" });
-      setTele({ logo: "14", svgH: "10", svgW: "150" });
-      setNews({ logo: "14", svgH: "30", svgW: "150" });
-    } else if (window?.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT) {
-      console.log("TABLET");
-      setCpuChip("22");
-      setBinance({ logo: "20", svgH: "100", svgW: "10" });
-      setBlock({ logo: "14", svgH: "40", svgW: "250" });
-      setTele({ logo: "24", svgH: "10", svgW: "280" });
-      setNews({ logo: "14", svgH: "40", svgW: "250" });
-    } else if (window?.innerWidth >= LAPTOP_BREAKPOINT) {
-      console.log("LAPTOP");
-      setCpuChip("24");
-      setBinance({ logo: "24", svgH: "130", svgW: "10" });
-      setBlock({ logo: "24", svgH: "80", svgW: "450" });
-      setTele({ logo: "24", svgH: "10", svgW: "450" });
-      setNews({ logo: "24", svgH: "80", svgW: "450" });
-    }
-  }
+  const [width, setWidth] = useState(0);
+  // const [cpuChip, setCpuChip] = useState<string>(
+  //   window.innerWidth >= LAPTOP_BREAKPOINT ? "24" : "20"
+  // );
+  // const [binance, setBinance] = useState<Binance>(
+  //   window.innerWidth >= LAPTOP_BREAKPOINT
+  //     ? { logo: "24", svgH: "130", svgW: "10" }
+  //     : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
+  //       ? { logo: "20", svgH: "100", svgW: "10" }
+  //       : { logo: "14", svgH: "80", svgW: "10" }
+  // );
+  // const [block, setBlock] = useState<Block>(
+  //   window.innerWidth >= LAPTOP_BREAKPOINT
+  //     ? { logo: "24", svgH: "80", svgW: "450" }
+  //     : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
+  //       ? { logo: "14", svgH: "40", svgW: "250" }
+  //       : { logo: "14", svgH: "30", svgW: "150" }
+  // );
+  // const [tele, setTele] = useState<Block>(
+  //   window.innerWidth >= LAPTOP_BREAKPOINT
+  //     ? { logo: "24", svgH: "10", svgW: "450" }
+  //     : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
+  //       ? { logo: "14", svgH: "10", svgW: "280" }
+  //       : { logo: "14", svgH: "10", svgW: "150" }
+  // );
+  // const [news, setNews] = useState<Block>(
+  //   window.innerWidth >= LAPTOP_BREAKPOINT
+  //     ? { logo: "24", svgH: "80", svgW: "450" }
+  //     : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
+  //       ? { logo: "14", svgH: "40", svgW: "250" }
+  //       : { logo: "14", svgH: "30", svgW: "150" }
+  // );
+  // function handleResize() {
+  //   if (window?.innerWidth <= MOBLE_BREAKPOINT) {
+  //     console.log("MOBILE");
+  //     setCpuChip("20");
+  //     setBinance({ logo: "14", svgH: "80", svgW: "10" });
+  //     setBlock({ logo: "14", svgH: "30", svgW: "150" });
+  //     setTele({ logo: "14", svgH: "10", svgW: "150" });
+  //     setNews({ logo: "14", svgH: "30", svgW: "150" });
+  //   } else if (window?.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT) {
+  //     console.log("TABLET");
+  //     setCpuChip("22");
+  //     setBinance({ logo: "20", svgH: "100", svgW: "10" });
+  //     setBlock({ logo: "14", svgH: "40", svgW: "250" });
+  //     setTele({ logo: "24", svgH: "10", svgW: "280" });
+  //     setNews({ logo: "14", svgH: "40", svgW: "250" });
+  //   } else if (window?.innerWidth >= LAPTOP_BREAKPOINT) {
+  //     console.log("LAPTOP");
+  //     setCpuChip("24");
+  //     setBinance({ logo: "24", svgH: "130", svgW: "10" });
+  //     setBlock({ logo: "24", svgH: "80", svgW: "450" });
+  //     setTele({ logo: "24", svgH: "10", svgW: "450" });
+  //     setNews({ logo: "24", svgH: "80", svgW: "450" });
+  //   }
+  // }
   useEffect(() => {
-    window?.addEventListener("resize", handleResize);
-    return () => {
-      window?.removeEventListener("resize", handleResize);
-    };
+    // setWidth(window.innerWidth);
+    // window?.addEventListener("resize", handleResize);
+    // return () => {
+    //   window?.removeEventListener("resize", handleResize);
+    // };
+    const update = () => setWidth(window.innerWidth);
+    update(); // immediate first run
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
+
+  const cpuChip = width! >= LAPTOP_BREAKPOINT ? "24" : width! >= TABLET_BREAKPOINT ? "20" : "14";
+  const binance: Binance =
+    width! >= LAPTOP_BREAKPOINT
+      ? { logo: "24", svgH: "130", svgW: "10" }
+      : width! >= TABLET_BREAKPOINT && width < LAPTOP_BREAKPOINT
+        ? { logo: "20", svgH: "100", svgW: "10" }
+        : { logo: "14", svgH: "80", svgW: "10" };
+
+  const block: Block =
+    width! >= LAPTOP_BREAKPOINT
+      ? { logo: "24", svgH: "80", svgW: "450" }
+      : width >= TABLET_BREAKPOINT && width < LAPTOP_BREAKPOINT
+        ? { logo: "14", svgH: "40", svgW: "250" }
+        : { logo: "14", svgH: "30", svgW: "150" };
+
+  const tele: Block =
+    width! >= LAPTOP_BREAKPOINT
+      ? { logo: "24", svgH: "10", svgW: "450" }
+      : width >= TABLET_BREAKPOINT && width < LAPTOP_BREAKPOINT
+        ? { logo: "14", svgH: "10", svgW: "280" }
+        : { logo: "14", svgH: "10", svgW: "150" };
+
+  const news: Block =
+    width! >= LAPTOP_BREAKPOINT
+      ? { logo: "24", svgH: "80", svgW: "450" }
+      : width >= TABLET_BREAKPOINT && width < LAPTOP_BREAKPOINT
+        ? { logo: "14", svgH: "40", svgW: "250" }
+        : { logo: "14", svgH: "30", svgW: "150" };
   return (
     <div className="mt-36 flex h-screen flex-col items-center bg-[var(--background)]">
       <motion.span
@@ -103,7 +140,6 @@ function HowItWorks() {
           backgroundImage: `radial-gradient(circle at 1px 1px, var(--grid-dots) 1px, transparent 0)`,
           backgroundSize: "10px 10px",
           backgroundRepeat: "repeat",
-          // maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)",
         }}
       >
         <div
@@ -113,6 +149,7 @@ function HowItWorks() {
             "bg-[var(--background)]"
           )}
         />
+
         <BlockSVG block={block} />
         <TelegraphSVG tele={tele} />
         <NewsSVG news={news} />
