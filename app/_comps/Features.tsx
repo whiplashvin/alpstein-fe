@@ -1,7 +1,42 @@
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
+import { useEffect, useState } from "react";
+
+const TABLET_BREAKPOINT = 768;
+const LAPTOP_BREAKPOINT = 1024;
 
 function Features() {
+  const [width, setWidth] = useState(0);
+
+  function handleResize() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const SVG1 =
+    width >= LAPTOP_BREAKPOINT
+      ? { height: "50", width: "50" }
+      : width >= TABLET_BREAKPOINT && width < LAPTOP_BREAKPOINT
+        ? { height: "40", width: "40" }
+        : { height: "30", width: "30" };
+  const SVG2 =
+    width >= LAPTOP_BREAKPOINT
+      ? { height: "60", width: "60" }
+      : width >= TABLET_BREAKPOINT && width < LAPTOP_BREAKPOINT
+        ? { height: "50", width: "50" }
+        : { height: "40", width: "40" };
+  const SVG3 =
+    width >= LAPTOP_BREAKPOINT
+      ? { height: "60", width: "60" }
+      : width >= TABLET_BREAKPOINT && width < LAPTOP_BREAKPOINT
+        ? { height: "50", width: "50" }
+        : { height: "40", width: "40" };
   return (
     <div className="mt-36 flex flex-col items-center bg-[var(--background)]">
       <motion.span
@@ -22,15 +57,14 @@ function Features() {
           <div className="flex items-center gap-2">
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
-              width="50"
-              height="50"
+              width={`${SVG1.width}`}
+              height={`${SVG1.height}`}
               viewBox="0 0 24 24"
               fill="none"
               stroke="var(--secondarytext)"
               strokeWidth="0.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="w-10 lg:w-20"
             >
               <motion.path
                 initial={{ opacity: 0, scale: 0.5, pathLength: 0 }}
@@ -65,7 +99,7 @@ function Features() {
                 rx="1"
               />
             </motion.svg>
-            <h2 className="text-xl leading-5 font-light text-[var(--secondarytext)]/90 md:leading-7 lg:text-3xl">
+            <h2 className="text-lg leading-5 font-light text-[var(--secondarytext)]/90 md:leading-7 lg:text-3xl">
               Latest crypto articles
             </h2>
           </div>
@@ -82,8 +116,8 @@ function Features() {
           <div className="flex items-center gap-2">
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
-              width="60"
-              height="60"
+              width={`${SVG2.width}`}
+              height={`${SVG2.height}`}
               viewBox="0 0 24 24"
               fill="none"
               stroke="var(--secondarytext)"
@@ -140,7 +174,7 @@ function Features() {
               />
             </motion.svg>
 
-            <h2 className="text-xl leading-5 font-light text-[var(--secondarytext)]/90 md:leading-7 lg:text-3xl">
+            <h2 className="text-lg leading-5 font-light text-[var(--secondarytext)]/90 md:leading-7 lg:text-3xl">
               GPT-4o analysis
             </h2>
           </div>
@@ -157,8 +191,8 @@ function Features() {
           <div className="flex items-center gap-2">
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
-              width="60"
-              height="60"
+              width={`${SVG3.width}`}
+              height={`${SVG3.height}`}
               viewBox="0 0 24 24"
               fill="none"
               stroke="var(--secondarytext)"
@@ -205,7 +239,7 @@ function Features() {
                 r="2"
               />
             </motion.svg>
-            <h2 className="text-xl leading-5 font-light text-[var(--secondarytext)]/90 md:leading-7 lg:text-3xl">
+            <h2 className="text-lg leading-5 font-light text-[var(--secondarytext)]/90 md:leading-7 lg:text-3xl">
               Price tracking with P&L
             </h2>
           </div>
