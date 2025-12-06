@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 import { useEffect, useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
@@ -108,6 +109,7 @@ function Comp({
       )}
     >
       <motion.div
+        //@ts-expect-error
         variants={childVariant}
         className="flex cursor-pointer items-center justify-between text-[var(--secondarytext)]"
         onClick={() => setActiveIndex(show ? null : index)}
@@ -125,6 +127,7 @@ function Comp({
       </motion.p>
       {index !== 4 && (
         <motion.div
+          //@ts-expect-error
           variants={childVariant}
           className={`absolute bottom-0 left-0 h-[0.5px] w-full bg-gradient-to-r from-transparent from-[-10%] via-zinc-700 via-50% to-transparent to-110%`}
         ></motion.div>

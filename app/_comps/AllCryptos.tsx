@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 "use client";
 import { useRef } from "react";
 import { cn } from "../lib/utils";
@@ -101,6 +102,7 @@ function CryptoComp({ d, calc }: { d: CryptoData; calc: (num: number) => string 
   const { setCurrTab } = useDashNav();
   return (
     <motion.li
+      //@ts-expect-error
       variants={childVariant}
       onClick={() => {
         if (d.position === "long" || d.position === "unclear") {

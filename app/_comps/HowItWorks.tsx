@@ -132,9 +132,10 @@ function HowItWorks() {
       >
         HOW ALPSTEIN WORKS
       </motion.span>
-      <motion.p className="mx-auto w-[80%] text-center text-lg font-light text-[var(--secondarytext)] md:text-xl">
-        At its core, Alpstein is a multi-process system, all working in synergy to curate a single
-        actionable output.
+      <motion.p className="mx-auto w-[80%] text-center text-lg font-light text-[var(--secondarytext)] md:w-full md:text-xl">
+        At its core, Alpstein is a multi-process system,
+        <br className="hidden md:block" /> all working in synergy to curate a single actionable
+        output.
       </motion.p>
       <div
         className={cn(
