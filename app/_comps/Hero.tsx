@@ -45,38 +45,8 @@ export function Hero() {
   const navigate = useRouter();
 
   return (
-    <div className="3xl:gap-18 relative flex w-full flex-col items-center gap-16">
-      <div
-        // className={cn(
-        //   "absolute inset-0 z-10 h-full w-full opacity-30",
-        //   "bg-[radial-gradient(70%_80%_at_50%_0%,_#a3b3ff_15%,_var(--background))]",
-        //   "md:bg-[radial-gradient(70%_50%_at_50%_0%,_#a3b3ff_15%,_var(--background))]"
-        // )}
-        style={
-          {
-            //#314158
-            //#a3b3ff
-            // backgroundImage: "radial-gradient(70% 50% at 50% 0%, #a3b3ff 15%, var(--background))",
-            // backgroundImage: "radial-gradient(70% 80% at 50% 0%, #a3b3ff 15%, var(--background))",
-          }
-        }
-      />
-      {/* <div
-        className={cn(
-          "absolute inset-0",
-          "[background-size:40px_40px]",
-          "md:[background-size:60px_60px]",
-          "z-0 [background-image:linear-gradient(to_left,var(--herogrid)_1px,transparent_1px),linear-gradient(to_top,var(--herogrid)_1px,transparent_1px)] opacity-10"
-        )}
-      /> */}
-      {/* <div
-        className={cn(
-          "pointer-events-none absolute inset-0 flex items-center justify-center",
-          "[mask-image:radial-gradient(ellipse_80%_80%_at_top,transparent_0%,black_80%)]",
-          "bg-[var(--background)]"
-        )}
-      /> */}
-      <div className="md2:mt-40 3xl:mt-52 3xl:gap-8 z-10 mt-22 flex w-full flex-col items-center gap-5 md:mt-36 lg:mt-30 lg:gap-5">
+    <div className="3xl:gap-18 relative z-0 flex w-full flex-col items-center gap-16">
+      <div className="md2:mt-40 3xl:mt-52 3xl:gap-8 z-10 mt-22 flex w-full flex-col items-center gap-5 md:mt-36 lg:mt-46 lg:gap-5">
         <motion.h2
           initial={{
             opacity: 0,
@@ -228,67 +198,4 @@ export function Hero() {
       </motion.div>
     </div>
   );
-}
-
-//  <motion.div
-//       initial={{
-//         opacity: 0,
-//         scale: 0.9,
-//         filter: "blur(10px)",
-//         y: 100,
-//       }}
-//       animate={{
-//         opacity: 1,
-//         scale: 1,
-//         filter: "blur(0px)",
-//         y: 0,
-//       }}
-//       transition={{
-//         duration: 0.5,
-//         ease: "easeIn",
-//         delay: 0.5,
-//       }}
-//       className=""
-//       style={{ scale: translateMarquee, filter: useMotionTemplate`blur(${translateBlur}px)` }}
-//     >
-//       <InfiniteSlide />
-//     </motion.div>
-{
-  /* <motion.div
-  initial={{
-    opacity: 0,
-    scale: 0.9,
-    filter: "blur(10px)",
-    y: 100,
-  }}
-  animate={{
-    opacity: 1,
-    scale: 1,
-    filter: "blur(0px)",
-    y: 0,
-  }}
-  transition={{
-    duration: 0.5,
-    ease: "easeIn",
-    delay: 1,
-  }}
-  style={{
-    scale: translateScale,
-    filter: useMotionTemplate`blur(${translateBlur}px)`,
-  }}
-  ref={imageRef}
-  className="l:w-[850px] z-10 mt-0 w-[350px] md:w-[650px] lg:w-[1100px]"
->
-  <div className="absolute bottom-0 left-1/2 h-[400px] w-[1000px] -translate-x-1/2 rounded-t-xl bg-[var(--background)] bg-lime-500 opacity-10"></div>
-  <Image
-    src={imageUrl}
-    height={400}
-    width={1100}
-    alt="temp"
-    className="rounded-t-xl bg-[var(--background)]"
-    style={{
-      maskImage: "linear-gradient(to bottom, black 90%, transparent 100%)",
-    }}
-  />
-</motion.div>; */
 }

@@ -120,20 +120,25 @@ function HowItWorks() {
         ? { logo: "14", svgH: "40", svgW: "250" }
         : { logo: "14", svgH: "30", svgW: "150" };
   return (
-    <div className="mt-36 flex h-screen flex-col items-center bg-[var(--background)]">
+    <div className="mt-36 flex h-screen flex-col items-center gap-10 bg-[var(--background)]">
       <motion.span
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, duration: 0.7, ease: "easeInOut" }}
         className={cn(
-          "h-fit rounded-full bg-[var(--bg-section)] px-3 py-0.5 text-xs font-extralight text-neutral-50 md:text-sm"
+          // "h-fit rounded-full bg-[var(--bg-section)] px-3 py-0.5 text-xs font-extralight text-neutral-50 md:text-sm"
+          "text-xs font-medium text-[var(--secondarytext)]/70 md:text-xs"
         )}
       >
-        How Alpstein works.
+        HOW ALPSTEIN WORKS
       </motion.span>
+      <motion.p className="mx-auto w-[80%] text-center text-lg font-light text-[var(--secondarytext)] md:text-xl">
+        At its core, Alpstein is a multi-process system, all working in synergy to curate a single
+        actionable output.
+      </motion.p>
       <div
         className={cn(
-          "md2:w-[75%] l:w-[80%] relative mx-auto mt-18 flex h-80 w-[80%] flex-col gap-0 rounded-[20px] bg-transparent p-0 md:h-96 md:w-[80%]",
+          "md2:w-[75%] l:w-[80%] relative mx-auto flex h-80 w-[80%] flex-col gap-0 rounded-[20px] p-0 md:h-96 md:w-[80%]",
           "flex flex-col justify-center gap-5 lg:gap-18"
         )}
         style={{
@@ -174,7 +179,7 @@ function BlockSVG({ block }: { block: Block }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="0.5"
+          stroke-width="1"
           stroke-linecap="round"
           stroke-linejoin="round"
         >
@@ -244,7 +249,7 @@ function TelegraphSVG({ tele }: { tele: Block }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="0.5"
+          stroke-width="1"
           stroke-linecap="round"
           stroke-linejoin="round"
         >
@@ -368,7 +373,7 @@ function NewsSVG({ news }: { news: Block }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="0.5"
+          stroke-width="1"
           stroke-linecap="round"
           stroke-linejoin="round"
         >
@@ -498,7 +503,7 @@ function Binance({ binance }: { binance: Binance }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="0.5"
+          stroke-width="1"
           stroke-linecap="round"
           stroke-linejoin="round"
         >
@@ -507,7 +512,7 @@ function Binance({ binance }: { binance: Binance }) {
           <line x1="6" x2="6.01" y1="6" y2="6" />
           <line x1="6" x2="6.01" y1="18" y2="18" />
         </svg>
-        <span className="text-[10px] text-[var(--primarytext)]/50 lg:text-sm">Binance API</span>
+        <span className="text-[10px] text-[var(--primarytext)]/70 lg:text-sm">Binance API</span>
       </div>
       <svg
         version="1.1"
@@ -615,7 +620,7 @@ function RAG({ rag }: { rag: Binance }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="0.5"
+          stroke-width="1"
           stroke-linecap="round"
           stroke-linejoin="round"
         >
@@ -625,7 +630,7 @@ function RAG({ rag }: { rag: Binance }) {
           <path d="M21 12L18 17H22L19 22" />
           <path d="M3 12A9 3 0 0 0 14.59 14.87" />
         </svg>
-        <span className="text-[10px] text-[var(--primarytext)]/50 lg:text-sm">RAG/Qdrant</span>
+        <span className="text-[10px] text-[var(--primarytext)]/70 lg:text-sm">RAG/Qdrant</span>
       </div>
     </div>
   );
