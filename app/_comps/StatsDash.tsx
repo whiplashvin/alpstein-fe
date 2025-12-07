@@ -47,7 +47,8 @@ function StatsDash() {
         // "[@media(min-width:1024px)_and_(min-height:1366px)]:grid-cols-1",
         // "[@media(min-width:1024px)_and_(min-height:1366px)]:flex",
         // "[@media(min-width:1024px)_and_(min-height:1366px)]:flex-col",
-        "3xl:h-[calc(1000px-100px)] 2xl:mt-14"
+        "3xl:h-[calc(1000px-100px)] 2xl:mt-14",
+        "l:h-[calc(100vh-60px)] bg-rose-500"
       )}
     >
       <div
@@ -56,7 +57,8 @@ function StatsDash() {
           // "[@media(min-width:1024px)_and_(min-height:1366px)]:grid-rows-1",
           "3xl:h-[calc(1000px-100px)]",
           "3xl:grid-rows-[1fr_2.5fr] 3xl:grid-cols-1",
-          `l:grid-rows-[1fr_2fr] l:grid-cols-1 l:gap-3 l:h-[calc(100vh-114px)] flex w-full flex-col gap-3 md:grid md:max-h-[calc(100vh-56px)] md:grid-cols-[1fr_2.5fr] 2xl:max-h-[calc(100vh-100px)]`
+          // `l:grid-rows-[1fr_2fr] l:grid-cols-1 l:gap-3 l:h-[calc(100vh-114px)] flex w-full flex-col gap-3 md:grid md:max-h-[calc(100vh-56px)] md:grid-cols-[1fr_2.5fr] 2xl:max-h-[calc(100vh-100px)]`
+          `l:grid-rows-[1fr_2fr] l:grid-cols-1 l:gap-3 l:h-[calc(100vh-114px)] flex w-full flex-col gap-3 md:grid md:max-h-[calc(100vh-56px)] md:grid-cols-[1fr_2.5fr] 2xl:h-[calc(100vh-60px)]`
         )}
       >
         <PopularCoins />
@@ -68,11 +70,12 @@ function StatsDash() {
           // "[@media(min-width:1024px)_and_(min-height:1366px)]:grid-cols-[2fr_1fr]",
           "3xl:h-[calc(1000px-100px)]",
           "md:grid-rows-1",
-          "l:grid-cols-1 l:grid-rows-[1.5fr_1fr] l:h-[calc(100vh-114px)] grid grid-rows-[1.5fr_1fr] gap-2 md:max-h-[calc(100vh-56px)] md:grid-cols-[2fr_1fr] md:grid-rows-1 2xl:max-h-[calc(100vh-100px)]"
+          // "l:grid-cols-1 l:grid-rows-[1.5fr_1fr] l:h-[calc(100vh-114px)] grid grid-rows-[1.5fr_1fr] gap-2 md:max-h-[calc(100vh-56px)] md:grid-cols-[2fr_1fr] md:grid-rows-1 2xl:max-h-[calc(100vh-100px)]"
+          "l:grid-cols-1 l:grid-rows-[1.5fr_1fr] l:h-[calc(100vh-114px)] grid grid-rows-[1.5fr_1fr] gap-2 md:max-h-[calc(100vh-56px)] md:grid-cols-[2fr_1fr] md:grid-rows-1 2xl:h-[calc(100vh-60px)]"
         )}
       >
         <Performers />
-        <PremiumCard />
+        {/* <PremiumCard /> */}
       </div>
     </motion.div>
   );

@@ -1,6 +1,14 @@
+import { useEffect } from "react";
 import { useDashNav } from "../lib/zustand";
 
 function DashNav() {
+  useEffect(() => {
+    const interval = setInterval(() => console.log("Logging from mobile comp"), 2000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  });
   return (
     <div className="mt-0 flex w-full items-center justify-between py-3 text-xs font-medium text-zinc-600">
       <Nav label="Opinion/Indicators" ind={0} />

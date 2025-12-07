@@ -20,6 +20,7 @@ function Navbar() {
 
   useEffect(() => {
     if (!ref.current) return;
+    console.log(ref.current.clientHeight);
     setHeight(ref.current.clientHeight);
   }, [setHeight]);
 
