@@ -49,12 +49,11 @@ function CryptoDash() {
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
 
-    setWidth(window.innerWidth); // initial
+    setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  console.log(width);
   return (
     <div className={cn("lg:mt-14", "2xl:mt-14")}>
       {width && (

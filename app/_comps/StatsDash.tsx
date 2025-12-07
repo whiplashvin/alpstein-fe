@@ -38,27 +38,21 @@ function StatsDash() {
   return (
     <motion.div
       className={cn(
-        "relative mt-14 flex h-[calc(100vh-104px)] flex-col gap-3 overflow-y-auto pb-2 md:pb-0",
+        "relative mt-14 flex h-[calc(100vh-104px)] flex-col gap-3 overflow-scroll pb-2 md:pb-0 lg:mt-18",
         `md:h-[calc(100vh-114px)]`,
-        "md:grid md:grid-rows-[1fr_1fr]",
+        "md:grid md:grid-rows-[2fr_1fr]",
         `l:grid-cols-[5fr_2fr] l:grid-rows-1 l:gap-2`,
-        // "3xl:hidden",
-        // "[@media(min-width:1024px)_and_(min-height:1366px)]:max-h-screen [@media(min-width:1024px)_and_(min-height:1366px)]:overflow-hidden",
-        // "[@media(min-width:1024px)_and_(min-height:1366px)]:grid-cols-1",
-        // "[@media(min-width:1024px)_and_(min-height:1366px)]:flex",
-        // "[@media(min-width:1024px)_and_(min-height:1366px)]:flex-col",
-        "3xl:h-[calc(1000px-100px)] 2xl:mt-14",
-        "l:h-[calc(100vh-60px)] bg-rose-500"
+        "3xl:h-[calc(1000px-100px)]",
+        "lg:h-[calc(100vh-72px)]"
       )}
     >
       <div
         className={cn(
-          // "[@media(min-width:1024px)_and_(min-height:1366px)]:grid-cols-[1fr_2.5fr]",
-          // "[@media(min-width:1024px)_and_(min-height:1366px)]:grid-rows-1",
           "3xl:h-[calc(1000px-100px)]",
           "3xl:grid-rows-[1fr_2.5fr] 3xl:grid-cols-1",
           // `l:grid-rows-[1fr_2fr] l:grid-cols-1 l:gap-3 l:h-[calc(100vh-114px)] flex w-full flex-col gap-3 md:grid md:max-h-[calc(100vh-56px)] md:grid-cols-[1fr_2.5fr] 2xl:max-h-[calc(100vh-100px)]`
-          `l:grid-rows-[1fr_2fr] l:grid-cols-1 l:gap-3 l:h-[calc(100vh-114px)] flex w-full flex-col gap-3 md:grid md:max-h-[calc(100vh-56px)] md:grid-cols-[1fr_2.5fr] 2xl:h-[calc(100vh-60px)]`
+          `l:grid-rows-[1fr_2fr] l:grid-cols-1 l:gap-3 l:h-[calc(100vh-114px)] flex w-full flex-col gap-3 md:grid md:max-h-[calc(100vh-56px)] md:grid-cols-[1fr_2.5fr] 2xl:h-full`,
+          "l:overflow-scroll"
         )}
       >
         <PopularCoins />
@@ -67,15 +61,15 @@ function StatsDash() {
       </div>
       <div
         className={cn(
-          // "[@media(min-width:1024px)_and_(min-height:1366px)]:grid-cols-[2fr_1fr]",
           "3xl:h-[calc(1000px-100px)]",
           "md:grid-rows-1",
-          // "l:grid-cols-1 l:grid-rows-[1.5fr_1fr] l:h-[calc(100vh-114px)] grid grid-rows-[1.5fr_1fr] gap-2 md:max-h-[calc(100vh-56px)] md:grid-cols-[2fr_1fr] md:grid-rows-1 2xl:max-h-[calc(100vh-100px)]"
-          "l:grid-cols-1 l:grid-rows-[1.5fr_1fr] l:h-[calc(100vh-114px)] grid grid-rows-[1.5fr_1fr] gap-2 md:max-h-[calc(100vh-56px)] md:grid-cols-[2fr_1fr] md:grid-rows-1 2xl:h-[calc(100vh-60px)]"
+          // "l:grid-cols-1 l:grid-rows-[1.5fr_1fr] l:h-[calc(100vh-114px)] grid grid-rows-[1.5fr_1fr] gap-2 md:max-h-[calc(100vh-56px)] md:grid-cols-[2fr_1fr] md:grid-rows-1 2xl:max-h-[calc(100vh-100px)]",
+          "l:grid-cols-1 l:grid-rows-[1.5fr_1fr] l:h-[calc(100vh-114px)] grid grid-rows-[1.5fr_1fr] gap-2 md:max-h-[calc(100vh-56px)] md:grid-cols-[2fr_1fr] md:grid-rows-1 2xl:h-full",
+          "l:overflow-scroll"
         )}
       >
         <Performers />
-        {/* <PremiumCard /> */}
+        <PremiumCard />
       </div>
     </motion.div>
   );

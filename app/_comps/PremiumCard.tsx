@@ -52,15 +52,14 @@ function PremiumCard() {
         backgroundImage,
       }}
       className={cn(
-        "relative grid h-86 min-h-0 w-full grid-rows-[3fr_1fr] rounded-2xl rounded-xl p-2",
-        // "shadow-[var(--shadow)] transition-shadow duration-500"
-        // "border border-[var(--stats-comp-bg)] bg-[var(--stats-comp-bg)]/20 backdrop-blur-xl",
-        "flex flex-col gap-6 bg-[var(--stats-comp-inner)]/60",
-        "flex flex-col justify-between"
+        "relative grid h-full min-h-0 w-full grid-rows-[3fr_1fr] rounded-2xl rounded-xl p-2 lg:h-84",
+        "shadow-[var(--shadow)] transition-shadow duration-500",
+        "l:gap-2 flex flex-col gap-6 bg-[var(--stats-comp-inner)]/60 md:gap-3",
+        "justify-between"
       )}
     >
       <div className="l:p-0 flex cursor-pointer items-center gap-2 p-6 text-sm text-[var(--logostroke)] opacity-90 transition-colors duration-700 md:text-sm lg:p-4 lg:text-sm">
-        <span>
+        <span className="l:hidden lg:block">
           <GiMountaintop size={30} />
         </span>
         <span>Alpstein</span>

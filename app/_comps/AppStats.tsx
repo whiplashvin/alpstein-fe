@@ -9,7 +9,7 @@ import StatsHalfDoughnut from "./StatsHalfDoughnut";
 
 function AppStats() {
   return (
-    <div className="flex h-full w-full gap-3 overflow-x-scroll bg-lime-500 md:grid md:grid-cols-2 md:gap-2 lg:h-fit lg:gap-2">
+    <div className="flex h-full w-full gap-3 overflow-x-scroll md:grid md:grid-cols-2 md:gap-2 lg:h-fit lg:gap-2">
       <Comp1 label={"Week's total articles"} graph={<StatsBarGraph />} />
       <Comp1 label={"Positions generated "} graph={<StatsDoughnutGraph />} />
       <Comp1 label={"Weekly performance"} graph={<StatsPoleAreaGraph />} />

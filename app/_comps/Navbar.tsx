@@ -37,7 +37,6 @@ function Navbar() {
         // "mx-auto max-w-[1512px]",
         "mx-auto max-w-7xl",
         `${path === "/" ? "bg-transparent" : "border-x border-[var(--cardborder)]/50 bg-[var(--background)]"}`
-        // "bg-rose-500"
       )}
     >
       {currUser && showUserModal && (
