@@ -49,9 +49,9 @@ function Layout({ children }: { children: React.ReactNode }) {
       id="dashboard-root"
       className={cn(
         "relative flex h-screen w-full gap-0 overflow-hidden lg:grid lg:grid-cols-[1.5fr_6fr]",
-        // "md:bg-gradient-to-tl md:from-transparent md:from-20% md:via-slate-600/20 md:via-50% md:to-transparent md:to-80%",
         "bg-[var(--background)]",
         "mx-auto max-w-7xl border-x border-[var(--cardborder)]/50"
+        // "md:bg-gradient-to-tl md:from-transparent md:from-20% md:via-slate-600/20 md:via-50% md:to-transparent md:to-80%"
       )}
       style={{
         userSelect: "none",

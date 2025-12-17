@@ -23,9 +23,7 @@ function WS({ symbol, showPrice }: { symbol: string | undefined; showPrice: bool
       `wss://stream.binance.com:9443/ws/${symbol?.toLowerCase()}usdt@ticker`
     );
 
-    ws.onopen = () => {
-      // console.log("WebSocket connection established");
-    };
+    ws.onopen = () => {};
 
     ws.onmessage = (event: MessageEvent) => {
       try {
@@ -43,9 +41,7 @@ function WS({ symbol, showPrice }: { symbol: string | undefined; showPrice: bool
       console.log("WebSocket error:", error);
     };
 
-    ws.onclose = () => {
-      // console.log("WebSocket connection closed");
-    };
+    ws.onclose = () => {};
 
     // Cleanup function
     return () => {

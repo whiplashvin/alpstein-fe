@@ -27,10 +27,12 @@ function AuthenticatedNav() {
         const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
           withCredentials: true,
         });
+        console.log(res.data);
         setUser(true, res.data.data);
       } catch (err) {
         if (err instanceof AxiosError) {
           toggleShowModal(true);
+          setUser(false, null);
           redirect("/");
         }
       }
@@ -64,10 +66,10 @@ function AuthenticatedNav() {
                     duration: 0.7,
                     ease: "easeInOut",
                   }}
-                  className="inxet-x-0 absolute -bottom-0.5 h-0.5 w-full bg-[var(--secondarytext)]"
+                  className="inxet-x-0 absolute -bottom-0.5 h-[1px] w-full bg-[var(--secondarytext)]"
                 />
               )}
-              <span className="font-medium md:text-sm">{p.label}</span>
+              <span className="font-light md:text-xs">{p.label}</span>
             </Link>
           )
       )}

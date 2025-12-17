@@ -34,7 +34,9 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
             "mx-auto mt-5 max-w-[1440px] grid-cols-[auto_1fr_auto] gap-4 md:mt-0 md:grid",
             "flex items-center justify-center",
             "h-screen bg-[var(--background)]",
-            "md:bg-gradient-to-tl md:from-transparent md:from-20% md:via-slate-600/20 md:via-50% md:to-transparent md:to-80%"
+            "max-w-7xl",
+            "justify-between gap-4 p-2 lg:p-0",
+            "3xl:max-h-[calc(1000px-100px)]"
           )}
         >
           <div

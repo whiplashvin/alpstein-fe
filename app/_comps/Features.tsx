@@ -50,7 +50,7 @@ function Features() {
       >
         WHY ALPSTEIN
       </motion.span>
-      <motion.p className="mx-auto w-[80%] text-center text-lg font-light text-[var(--secondarytext)] md:w-full md:text-xl">
+      <motion.p className="mx-auto w-[80%] text-center text-lg font-light text-[var(--secondarytext)]/70 md:w-full md:text-xl">
         Ever felt the need for someone who reads crypto articles for you,
         <br className="hidden md:block" /> also giving you a clear actionable path?
       </motion.p>

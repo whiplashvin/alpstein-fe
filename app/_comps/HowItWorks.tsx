@@ -24,67 +24,7 @@ type Block = {
 };
 function HowItWorks() {
   const [width, setWidth] = useState(0);
-  // const [cpuChip, setCpuChip] = useState<string>(
-  //   window.innerWidth >= LAPTOP_BREAKPOINT ? "24" : "20"
-  // );
-  // const [binance, setBinance] = useState<Binance>(
-  //   window.innerWidth >= LAPTOP_BREAKPOINT
-  //     ? { logo: "24", svgH: "130", svgW: "10" }
-  //     : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
-  //       ? { logo: "20", svgH: "100", svgW: "10" }
-  //       : { logo: "14", svgH: "80", svgW: "10" }
-  // );
-  // const [block, setBlock] = useState<Block>(
-  //   window.innerWidth >= LAPTOP_BREAKPOINT
-  //     ? { logo: "24", svgH: "80", svgW: "450" }
-  //     : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
-  //       ? { logo: "14", svgH: "40", svgW: "250" }
-  //       : { logo: "14", svgH: "30", svgW: "150" }
-  // );
-  // const [tele, setTele] = useState<Block>(
-  //   window.innerWidth >= LAPTOP_BREAKPOINT
-  //     ? { logo: "24", svgH: "10", svgW: "450" }
-  //     : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
-  //       ? { logo: "14", svgH: "10", svgW: "280" }
-  //       : { logo: "14", svgH: "10", svgW: "150" }
-  // );
-  // const [news, setNews] = useState<Block>(
-  //   window.innerWidth >= LAPTOP_BREAKPOINT
-  //     ? { logo: "24", svgH: "80", svgW: "450" }
-  //     : window.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT
-  //       ? { logo: "14", svgH: "40", svgW: "250" }
-  //       : { logo: "14", svgH: "30", svgW: "150" }
-  // );
-  // function handleResize() {
-  //   if (window?.innerWidth <= MOBLE_BREAKPOINT) {
-  //     console.log("MOBILE");
-  //     setCpuChip("20");
-  //     setBinance({ logo: "14", svgH: "80", svgW: "10" });
-  //     setBlock({ logo: "14", svgH: "30", svgW: "150" });
-  //     setTele({ logo: "14", svgH: "10", svgW: "150" });
-  //     setNews({ logo: "14", svgH: "30", svgW: "150" });
-  //   } else if (window?.innerWidth >= TABLET_BREAKPOINT && window.innerWidth < LAPTOP_BREAKPOINT) {
-  //     console.log("TABLET");
-  //     setCpuChip("22");
-  //     setBinance({ logo: "20", svgH: "100", svgW: "10" });
-  //     setBlock({ logo: "14", svgH: "40", svgW: "250" });
-  //     setTele({ logo: "24", svgH: "10", svgW: "280" });
-  //     setNews({ logo: "14", svgH: "40", svgW: "250" });
-  //   } else if (window?.innerWidth >= LAPTOP_BREAKPOINT) {
-  //     console.log("LAPTOP");
-  //     setCpuChip("24");
-  //     setBinance({ logo: "24", svgH: "130", svgW: "10" });
-  //     setBlock({ logo: "24", svgH: "80", svgW: "450" });
-  //     setTele({ logo: "24", svgH: "10", svgW: "450" });
-  //     setNews({ logo: "24", svgH: "80", svgW: "450" });
-  //   }
-  // }
   useEffect(() => {
-    // setWidth(window.innerWidth);
-    // window?.addEventListener("resize", handleResize);
-    // return () => {
-    //   window?.removeEventListener("resize", handleResize);
-    // };
     const update = () => setWidth(window.innerWidth);
     update(); // immediate first run
     window.addEventListener("resize", update);
@@ -132,7 +72,7 @@ function HowItWorks() {
       >
         HOW ALPSTEIN WORKS
       </motion.span>
-      <motion.p className="mx-auto w-[80%] text-center text-lg font-light text-[var(--secondarytext)] md:w-full md:text-xl">
+      <motion.p className="mx-auto w-[80%] text-center text-lg font-light text-[var(--secondarytext)]/70 md:w-full md:text-xl">
         At its core, Alpstein is a multi-process system,
         <br className="hidden md:block" /> all working in synergy to curate a single actionable
         output.
