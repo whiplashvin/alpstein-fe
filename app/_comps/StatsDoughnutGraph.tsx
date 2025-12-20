@@ -1,12 +1,13 @@
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from "chart.js";
 import { useEffect, useState } from "react";
+import { useAppStats } from "../lib/zustand";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function StatsDoughnutGraph() {
+  const { stats } = useAppStats();
   const [labelColor, setLabelColor] = useState("");
-
   function updateColor() {
     const labelText = getComputedStyle(document.documentElement)
       .getPropertyValue("--primarytext")
@@ -32,7 +33,7 @@ function StatsDoughnutGraph() {
     labels: ["Long", "Short", "Unclear"],
     datasets: [
       {
-        data: [30, 30, 40],
+        data: [stats?.numLong, stats?.numShort, stats?.numUnclear],
         // backgroundColor: ["#a3b3ff", "#ff637e", "#3ab2b2"],
         backgroundColor: ["#51a2ff", "#b8e6fe", "#c4b4ff"],
         // borderColor: ["#a3b3ff", "#ff637e", "#3ab2b2"],

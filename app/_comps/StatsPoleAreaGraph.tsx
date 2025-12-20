@@ -8,10 +8,12 @@ import {
   ChartOptions,
 } from "chart.js";
 import { useEffect, useState } from "react";
+import { useAppStats } from "../lib/zustand";
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 function StatsPoleAreaGraph() {
+  const { stats } = useAppStats();
   const [labelColor, setLabelColor] = useState("");
   const [poleBorder, setPoleBorder] = useState("");
 
@@ -39,11 +41,11 @@ function StatsPoleAreaGraph() {
   });
 
   const data = {
-    labels: ["Target Hit", "SL Hit", "Pending", "Untriggered"],
+    labels: ["Target Hit", "SL Hit", "Pending", "Triggered"],
     datasets: [
       {
         label: "Trade Stats",
-        data: [45, 40, 25, 20],
+        data: [stats?.numTarget, stats?.numSL, stats?.numPending, stats?.numTriggered],
         // backgroundColor: ["#a3b3ff", "#ff637e", "#3ab2b2"],
         backgroundColor: ["#51a2ff", "#b8e6fe", "#c4b4ff", "#53eafd"],
         // borderColor: ["#a3b3ff", "#ff637e", "#3ab2b2"],

@@ -6,8 +6,22 @@ import StatsBarGraph from "./StatsBarGraph";
 import StatsDoughnutGraph from "./StatsDoughnutGraph";
 import StatsPoleAreaGraph from "./StatsPoleAreaGraph";
 import StatsHalfDoughnut from "./StatsHalfDoughnut";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { useAppStats } from "../lib/zustand";
 
 function AppStats() {
+  const { setStats } = useAppStats();
+  useQuery({
+    queryKey: ["app-stats"],
+    queryFn: async () => {
+      const res = await axios.get("https://api.alpstein.tech/api/v1/app-stats", {
+        withCredentials: true,
+      });
+      setStats(res.data.data);
+      return res.data.data;
+    },
+  });
   return (
     <div className="flex h-full w-full gap-3 overflow-x-scroll md:grid md:grid-cols-2 md:gap-2 lg:h-fit lg:gap-2">
       <Comp1 label={"Week's total articles"} graph={<StatsBarGraph />} />

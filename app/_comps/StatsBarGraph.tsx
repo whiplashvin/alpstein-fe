@@ -10,10 +10,12 @@ import {
   ChartOptions,
 } from "chart.js";
 import { useEffect, useState } from "react";
+import { useAppStats } from "../lib/zustand";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function StatsBarGraph() {
+  const { stats } = useAppStats();
   // const [barColor, setBarColor] = useState("");
   // const [textColor, setTextColor] = useState("");
   const [labelColor, setLabelColor] = useState("");
@@ -82,14 +84,32 @@ function StatsBarGraph() {
     },
   };
 
-  const labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const date = new Date().getDate();
+  const month = new Date().getMonth();
+  const year = new Date().getFullYear();
+  const today = new Date(year, month, date);
+
+  const labels = Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(today);
+    d.setDate(d.getDate() - (7 - i));
+
+    return `${d.getDate()}/${d.getMonth() + 1}`;
+  });
 
   const data = {
     labels,
     datasets: [
       {
         label: "Articles",
-        data: [65, 59, 80, 81, 56, 55, 40],
+        data: [
+          stats?.seventh,
+          stats?.sixth,
+          stats?.fifth,
+          stats?.fourth,
+          stats?.third,
+          stats?.second,
+          stats?.first,
+        ],
         // backgroundColor: barColor,
         backgroundColor: "#a3b3ff",
         borderRadius: 50,

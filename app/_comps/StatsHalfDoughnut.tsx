@@ -9,10 +9,12 @@ import {
   ScriptableContext,
 } from "chart.js";
 import { useEffect, useState } from "react";
+import { useAppStats } from "../lib/zustand";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function StatsHalfDoughnut() {
+  const { stats } = useAppStats();
   const [labelColor, setLabelColor] = useState("");
 
   function updateColor() {
@@ -77,7 +79,12 @@ function StatsHalfDoughnut() {
     datasets: [
       {
         // label: "Articles",
-        data: [65, 59, 80, 40],
+        data: [
+          stats?.numBearish || 0,
+          stats?.numVolatility || 0,
+          stats?.numBullish || 0,
+          stats?.numWhale || 0,
+        ],
         // backgroundColor: "#a3b3ff",
         backgroundColor: (ctx: ScriptableContext<"bar">) => {
           const chart = ctx.chart;

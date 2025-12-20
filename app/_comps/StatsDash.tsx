@@ -6,8 +6,6 @@ import { cn } from "../lib/utils";
 import PopularSkeleton from "../_skeletons/PopularSkeleton";
 import PerformersSkeleton from "../_skeletons/PerformersSkeleton";
 import PremiumSkeleton from "../_skeletons/PremiumSkeleton";
-import { useFooterHeight, useNavBarHeight } from "../lib/zustand";
-import { useEffect } from "react";
 
 const AppStats = dynamic(() => import("./AppStats"), {
   ssr: false,
@@ -29,12 +27,6 @@ const PremiumCard = dynamic(() => import("./PremiumCard"), {
 });
 
 function StatsDash() {
-  const { height: navbar } = useNavBarHeight();
-  const { height: footer } = useFooterHeight();
-  useEffect(() => {
-    console.log(window.innerHeight, window.outerHeight);
-  }, []);
-  console.log(navbar, footer);
   return (
     <motion.div
       className={cn(

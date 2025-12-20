@@ -86,13 +86,14 @@ function PremiumCard() {
           placeholder="Enter your email address"
         />
         <button
+          disabled={true}
           className={cn(
-            "w-full cursor-pointer rounded-md bg-transparent px-4 py-2 text-xs text-[var(--secondarytext)]",
+            "w-full cursor-not-allowed rounded-md bg-transparent px-4 py-2 text-xs text-[var(--secondarytext)]",
             "shadow-[var(--shadow)] transition-shadow duration-500"
           )}
           onClick={() => alert("fasd")}
         >
-          Become a member
+          Coming soon...
         </button>
       </div>
       <div className="absolute inset-0 z-0">

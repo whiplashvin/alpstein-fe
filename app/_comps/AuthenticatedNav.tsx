@@ -27,7 +27,6 @@ function AuthenticatedNav() {
         const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
           withCredentials: true,
         });
-        console.log(res.data);
         setUser(true, res.data.data);
       } catch (err) {
         if (err instanceof AxiosError) {

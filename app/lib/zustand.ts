@@ -303,6 +303,38 @@ const useUserModal = create<UserModal>(set => ({
   showUserModal: false,
   setShowUserModal: (show: boolean) => set({ showUserModal: show }),
 }));
+
+type AppStats = {
+  seventh: number;
+  sixth: number;
+  fifth: number;
+  fourth: number;
+  third: number;
+  second: number;
+  first: number;
+  numLong: number;
+  numShort: number;
+  numUnclear: number;
+  numTriggered: number;
+  numPending: number;
+  numTarget: number;
+  numSL: number;
+  numVolatility: number;
+  numBearish: number;
+  numBullish: number;
+  numWhale: number;
+};
+
+type Stats = {
+  stats: AppStats | null;
+  setStats: (data: AppStats) => void;
+};
+
+const useAppStats = create<Stats>(set => ({
+  stats: null,
+  setStats: data => set({ stats: data }),
+}));
+
 export {
   useTickerTapeDisplay,
   useCurrentCryptoId,
@@ -322,4 +354,5 @@ export {
   useTradePaginate,
   useNavBarHeight,
   useFooterHeight,
+  useAppStats,
 };
