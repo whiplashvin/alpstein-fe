@@ -15,7 +15,7 @@ function AppStats() {
   useQuery({
     queryKey: ["app-stats"],
     queryFn: async () => {
-      const res = await axios.get("https://api.alpstein.tech/api/v1/app-stats", {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/app-stats`, {
         withCredentials: true,
       });
       setStats(res.data.data);
