@@ -46,7 +46,7 @@ export function Hero() {
 
   return (
     <div className="3xl:gap-18 relative z-0 flex w-full flex-col items-center gap-16">
-      <div className="md2:mt-40 3xl:mt-52 3xl:gap-8 z-10 mt-22 flex w-full flex-col items-center gap-5 md:mt-36 lg:mt-46 lg:gap-5">
+      <div className="md2:mt-40 3xl:mt-52 3xl:gap-8 z-10 mt-36 flex w-full flex-col items-center gap-5 lg:mt-46 lg:gap-5">
         <motion.h2
           initial={{
             opacity: 0,
