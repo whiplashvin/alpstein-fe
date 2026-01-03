@@ -60,7 +60,7 @@ function HowItWorks() {
         ? { logo: "14", svgH: "40", svgW: "250" }
         : { logo: "14", svgH: "30", svgW: "150" };
   return (
-    <div className="mt-36 flex h-screen flex-col items-center gap-10 bg-[var(--background)]">
+    <div className="mt-52 flex flex-col items-center gap-10 bg-[var(--background)]">
       <motion.span
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}

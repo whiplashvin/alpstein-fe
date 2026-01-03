@@ -38,7 +38,7 @@ function Features() {
   //         ? { height: "50", width: "50" }
   //         : { height: "40", width: "40" };
   return (
-    <div className="mt-36 flex flex-col items-center gap-10 bg-[var(--background)]">
+    <div className="mt-52 flex flex-col items-center gap-10 bg-[var(--background)]">
       <motion.span
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}

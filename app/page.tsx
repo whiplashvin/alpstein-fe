@@ -4,7 +4,7 @@ import Features from "./_comps/Features";
 import { Hero } from "./_comps/Hero";
 import HowItWorks from "./_comps/HowItWorks";
 import SigninModal from "./_comps/SigninModal";
-
+import Feat from "./_comps/Feat";
 export default function Home() {
   return (
     <div
@@ -18,6 +18,7 @@ export default function Home() {
         <SigninModal />
         <Features />
         <HowItWorks />
+        <Feat />
       </div>
     </div>
   );
