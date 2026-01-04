@@ -130,9 +130,9 @@ function Features() {
               //   viewBox="0 0 24 24"
               //   fill="none"
               //   stroke="var(--secondarytext)"
-              //   stroke-width="0.8"
-              //   stroke-linecap="round"
-              //   stroke-linejoin="round"
+              //   strokeWidth="0.8"
+              //   strokeLinecap="round"
+              //   strokeLinejoin="round"
 
               width="24"
               height="24"
@@ -219,9 +219,9 @@ function Features() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="var(--secondarytext)"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <motion.path
                 initial={{ opacity: 0, scale: 0.5, pathLength: 0 }}

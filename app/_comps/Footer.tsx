@@ -3,18 +3,18 @@ import { BiStats } from "react-icons/bi";
 import { SlDocs } from "react-icons/sl";
 import { TbArrowsExchange2 } from "react-icons/tb";
 import Link from "next/link";
-import { useFooterHeight, useUser } from "../lib/zustand";
-import { useEffect, useRef } from "react";
+import { useUser } from "../lib/zustand";
+import { useRef } from "react";
 
 function Footer() {
   const ref = useRef<HTMLDivElement | null>(null);
   const { currUser } = useUser();
-  const { setHeight } = useFooterHeight();
+  // const { setHeight } = useFooterHeight();
 
-  useEffect(() => {
-    if (!ref.current) return;
-    setHeight(ref.current.clientHeight);
-  }, [setHeight]);
+  // useEffect(() => {
+  //   if (!ref.current) return;
+  //   setHeight(ref.current.clientHeight);
+  // }, [setHeight]);
 
   const LINKS = [
     { label: "Stats", url: "/dashboard", logo: <BiStats size={12} /> },

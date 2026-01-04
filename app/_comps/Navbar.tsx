@@ -2,13 +2,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { GiMountaintop } from "react-icons/gi";
-import { useNavBarHeight, useShowSigninModal, useUser, useUserModal } from "../lib/zustand";
+import { useNavbarBackdropBlur, useShowSigninModal, useUser, useUserModal } from "../lib/zustand";
 import AuthenticatedNav from "./AuthenticatedNav";
 import { cn } from "../lib/utils";
 import { UserModal } from "./UserModal";
 import SideBarToggle from "./SideBarToggle";
 import DarkModelToggle from "./DarkModelToggle";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 function Navbar() {
   const path = usePathname();
@@ -16,13 +16,7 @@ function Navbar() {
   const { toggleShowModal } = useShowSigninModal();
   const { showUserModal } = useUserModal();
   const ref = useRef<HTMLDivElement | null>(null);
-  const { setHeight } = useNavBarHeight();
-
-  useEffect(() => {
-    if (!ref.current) return;
-    console.log(ref.current.clientHeight);
-    setHeight(ref.current.clientHeight);
-  }, [setHeight]);
+  const { trigger } = useNavbarBackdropBlur();
 
   return (
     <div
@@ -30,12 +24,14 @@ function Navbar() {
       id="navbar"
       className={cn(
         "top-0 w-full p-3",
-        "lg:top-0 lg:w-[90%] lg:px-6 lg:py-0",
+        "lg:w-[90%] lg:px-6 lg:py-0",
         "fixed left-1/2 z-50 -translate-x-1/2",
         "flex justify-between",
         "2xl:py-2",
         "mx-auto max-w-7xl",
-        `${path === "/" ? "bg-transparent" : "border-x border-[var(--cardborder)]/50 bg-[var(--background)]"}`
+        `${path === "/" ? "bg-transparent" : "border-x border-[var(--cardborder)]/50 bg-[var(--background)]"}`,
+        // `${trigger && path === "/" ? "rounded-lg border border-[var(--cardborder)]/50 backdrop-blur-[5px] transition duration-[300] ease-in-out lg:top-1" : ""}`
+        `${trigger && path === "/" ? "rounded-lg border-b border-[var(--cardborder)]/50 shadow-sm backdrop-blur-[5px]" : ""}`
       )}
     >
       {currUser && showUserModal && (

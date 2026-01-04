@@ -116,20 +116,20 @@ type SwitchChart = {
   toggleCurrChart: (curr: CHART) => void;
 };
 
-type NavBarHeight = {
-  height: number;
-  setHeight: (h: number) => void;
-};
+// type NavBarHeight = {
+//   height: number;
+//   setHeight: (h: number) => void;
+// };
 
-const useNavBarHeight = create<NavBarHeight>(set => ({
-  height: 0,
-  setHeight: (h: number) => set({ height: h }),
-}));
+// const useNavBarHeight = create<NavBarHeight>(set => ({
+//   height: 0,
+//   setHeight: (h: number) => set({ height: h }),
+// }));
 
-const useFooterHeight = create<NavBarHeight>(set => ({
-  height: 0,
-  setHeight: (h: number) => set({ height: h }),
-}));
+// const useFooterHeight = create<NavBarHeight>(set => ({
+//   height: 0,
+//   setHeight: (h: number) => set({ height: h }),
+// }));
 
 const useTickerTapeDisplay = create<TickerTapeDisplayType>(set => ({
   displayTickerTape: false,
@@ -335,6 +335,15 @@ const useAppStats = create<Stats>(set => ({
   setStats: data => set({ stats: data }),
 }));
 
+type NavbarBackdropBlur = {
+  trigger: boolean;
+  setTrigger: (val: boolean) => void;
+};
+
+const useNavbarBackdropBlur = create<NavbarBackdropBlur>(set => ({
+  trigger: false,
+  setTrigger: (val: boolean) => set({ trigger: val }),
+}));
 export {
   useTickerTapeDisplay,
   useCurrentCryptoId,
@@ -352,7 +361,8 @@ export {
   useUserModal,
   useAllTrades,
   useTradePaginate,
-  useNavBarHeight,
-  useFooterHeight,
+  // useNavBarHeight,
+  // useFooterHeight,
   useAppStats,
+  useNavbarBackdropBlur,
 };

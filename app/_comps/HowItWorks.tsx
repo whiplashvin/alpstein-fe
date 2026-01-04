@@ -120,9 +120,9 @@ function BlockSVG({ block }: { block: Block }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <circle cx="12" cy="12" r="10" />
           <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
@@ -164,11 +164,11 @@ function BlockSVG({ block }: { block: Block }) {
             <stop offset="1" stopColor="var(--svg-path)" />
           </motion.linearGradient>
         </defs>
-        <g stroke-linecap="round">
+        <g strokeLinecap="round">
           <g transform="translate(10 14.143902692013853) rotate(0 866.6623848252048 135.95757232998312)">
             <path
               d="M0 0 C463.05 -1.11, 926.09 -2.21, 1733.32 -4.14 M0 0 C605.73 -1.45, 1211.46 -2.9, 1733.32 -4.14 M1733.32 -4.14 C1733.05 58.22, 1732.78 120.59, 1732.09 276.06 M1733.32 -4.14 C1733.01 66.74, 1732.7 137.62, 1732.09 276.06"
-              stroke-width="5"
+              strokeWidth="5"
               fill="none"
             ></path>
           </g>
@@ -190,9 +190,9 @@ function TelegraphSVG({ tele }: { tele: Block }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path d="M10 18v-7" />
           <path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z" />
@@ -237,11 +237,11 @@ function TelegraphSVG({ tele }: { tele: Block }) {
             <stop offset="1" stopColor="var(--svg-path)" />
           </motion.linearGradient>
         </defs>
-        <g stroke-linecap="round">
+        <g strokeLinecap="round">
           <g transform="translate(10 10) rotate(0 860.9832765665183 0.5306904164385742)">
             <path
               d="M0 0 C680.17 0.42, 1360.33 0.84, 1721.97 1.06 M0 0 C514.05 0.32, 1028.09 0.63, 1721.97 1.06"
-              stroke-width="5"
+              strokeWidth="5"
               fill="none"
             ></path>
           </g>
@@ -289,7 +289,7 @@ function TelegraphSVG({ tele }: { tele: Block }) {
             <stop offset="1" stopColor="var(--svg-path)" />
           </motion.linearGradient>
         </defs>
-        <g stroke-linecap="round">
+        <g strokeLinecap="round">
           <g transform="translate(10 10) rotate(0 860.9832765665183 0.5306904164385742)">
             <path
               d="M0 0 C680.17 0.42, 1360.33 0.84, 1721.97 1.06 M0 0 C514.05 0.32, 1028.09 0.63, 1721.97 1.06"
@@ -314,9 +314,9 @@ function NewsSVG({ news }: { news: Block }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path d="M15 18h-5" />
           <path d="M18 14h-8" />
@@ -359,11 +359,11 @@ function NewsSVG({ news }: { news: Block }) {
             <stop offset="1" stopColor="var(--svg-path)" />
           </motion.linearGradient>
         </defs>
-        <g stroke-linecap="round">
+        <g strokeLinecap="round">
           <g transform="translate(10 282.30350506249806) rotate(0 852.7755819593431 -135.0541116837153)">
             <path
               d="M0 0 C528.86 0.68, 1057.72 1.36, 1705.25 2.2 M0 0 C508.8 0.66, 1017.6 1.31, 1705.25 2.2 M1705.25 2.2 C1705.35 -93.75, 1705.46 -189.69, 1705.55 -272.3 M1705.25 2.2 C1705.32 -66.17, 1705.4 -134.54, 1705.55 -272.3"
-              stroke-width="5"
+              strokeWidth="5"
               fill="none"
             ></path>
           </g>
@@ -407,9 +407,9 @@ function LLMComp({ cpuChip }: { cpuChip: string }) {
             fill="none"
             // stroke="#c800de"
             stroke="#00b8db"
-            stroke-width="0.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="0.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path d="M12 20v2" />
             <path d="M12 2v2" />
@@ -444,9 +444,9 @@ function Binance({ binance }: { binance: Binance }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
           <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
@@ -489,11 +489,11 @@ function Binance({ binance }: { binance: Binance }) {
             <stop offset="1" stopColor="var(--svg-path)" />
           </motion.linearGradient>
         </defs>
-        <g stroke-linecap="round">
+        <g strokeLinecap="round">
           <g transform="translate(10 10) rotate(0 0.15245557948128408 307.2874774524828)">
             <path
               d="M0 0 C0.12 236.94, 0.24 473.87, 0.3 614.57 M0 0 C0.11 218.53, 0.22 437.05, 0.3 614.57"
-              stroke-width="5"
+              strokeWidth="5"
               fill="none"
             ></path>
           </g>
@@ -542,11 +542,11 @@ function RAG({ rag }: { rag: Binance }) {
             <stop offset="1" stopColor="var(--svg-path)" />
           </motion.linearGradient>
         </defs>
-        <g stroke-linecap="round">
+        <g strokeLinecap="round">
           <g transform="translate(10 10) rotate(0 0.15245557948128408 307.2874774524828)">
             <path
               d="M0 0 C0.12 236.94, 0.24 473.87, 0.3 614.57 M0 0 C0.11 218.53, 0.22 437.05, 0.3 614.57"
-              stroke-width="5"
+              strokeWidth="5"
               fill="none"
             ></path>
           </g>
@@ -561,9 +561,9 @@ function RAG({ rag }: { rag: Binance }) {
           viewBox="0 0 24 24"
           fill="none"
           stroke="var(--primarytext)"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <ellipse cx="12" cy="5" rx="9" ry="3" />
           <path d="M3 5V19A9 3 0 0 0 15 21.84" />
