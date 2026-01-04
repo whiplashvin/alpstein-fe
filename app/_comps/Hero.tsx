@@ -177,7 +177,8 @@ export function Hero() {
         // className="l:bottom-25 l:w-[850px] absolute left-1/2 z-10 hidden -translate-x-1/2 md:bottom-65 md:block md:w-[650px] lg:bottom-20 lg:w-[900px]"
         className={
           cn(
-            "relative mx-auto h-full max-h-fit w-[90%] rounded-2xl border border-[var(--hero-img-border)]/70 bg-[var(--hero-img-border)]/30 p-2 backdrop-blur-xl md:w-[80%]"
+            "relative mx-auto h-full max-h-fit w-[90%] rounded-2xl border border-[var(--hero-img-border)]/70 bg-[var(--hero-img-border)]/30 p-2 backdrop-blur-xl md:w-[80%]",
+            "shadow-2xl"
           )
           // "bg-radial-[at_20%_20%] from-transparent from-60% via-blue-300/20 via-80% to-blue-400/20 to-100%"
         }

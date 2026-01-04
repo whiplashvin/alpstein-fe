@@ -145,12 +145,7 @@ function TVCandleStick() {
   }, [data, showCandleModal, markers, positionDisplayed, cryptoData]);
 
   return (
-    <div
-      className={cn(
-        "relative h-full w-full rounded-lg pb-5 md:h-full",
-        "border border-[var(--cardborder)]"
-      )}
-    >
+    <div className={cn("relative h-full w-full pb-5")}>
       <div
         ref={container}
         className={cn(

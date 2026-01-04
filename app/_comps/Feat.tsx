@@ -1,6 +1,10 @@
 import Image from "next/image";
-import { motion } from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 function Feat() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const translateScale = useTransform(scrollYProgress, [0.6, 1], [1, 0.75]);
   return (
     <div className="mt-52 flex h-screen flex-col items-center gap-10 bg-[var(--background)]">
       <motion.span
@@ -15,7 +19,18 @@ function Feat() {
         Among many other things, here are some features Alpstein comes with.
       </motion.p>
 
-      <div className="grid w-[70%] grid-cols-1 gap-10 md:grid-cols-2 lg:w-[90%] lg:grid-cols-4 lg:gap-5">
+      <motion.div
+        ref={ref}
+        transition={{
+          duration: 0.5,
+          ease: "easeIn",
+          delay: 1,
+        }}
+        style={{
+          scale: translateScale,
+        }}
+        className="grid w-[70%] grid-cols-1 gap-10 md:grid-cols-2 lg:w-[90%] lg:grid-cols-4 lg:gap-5"
+      >
         <div className="relative h-96 w-full overflow-hidden rounded-2xl p-2 shadow-xl backdrop-blur-xl perspective-distant">
           <div className="absolute inset-0 z-20 h-full w-full rounded-xl dark:bg-neutral-800/30"></div>
           <motion.div className="perspective-distant">
@@ -141,7 +156,7 @@ function Feat() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

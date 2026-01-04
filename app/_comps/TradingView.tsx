@@ -223,10 +223,7 @@ function TW() {
   return (
     <motion.div
       key={`${cryptoData?.id}-${positionDisplayed}`}
-      className={cn(
-        `relative h-full w-full rounded-lg pb-5 md:h-full`,
-        "border border-[var(--cardborder)]"
-      )}
+      className={cn(`relative h-full w-full pb-5`)}
     >
       <div
         ref={container}

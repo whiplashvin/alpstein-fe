@@ -1,8 +1,9 @@
 "use client";
-import { motion } from "motion/react";
+
 import { cn } from "../lib/utils";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 // const MOBLE_BREAKPOINT = 430;
 const TABLET_BREAKPOINT = 768;
@@ -23,6 +24,9 @@ type Block = {
   right?: string;
 };
 function HowItWorks() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const translateScale = useTransform(scrollYProgress, [0.6, 1], [1, 0.75]);
   const [width, setWidth] = useState(0);
   useEffect(() => {
     const update = () => setWidth(window.innerWidth);
@@ -77,7 +81,13 @@ function HowItWorks() {
         <br className="hidden md:block" /> all working in synergy to curate a single actionable
         output.
       </motion.p>
-      <div
+      <motion.div
+        ref={ref}
+        transition={{
+          duration: 0.5,
+          ease: "easeIn",
+          delay: 1,
+        }}
         className={cn(
           "md2:w-[75%] l:w-[80%] relative mx-auto flex h-80 w-[80%] flex-col gap-0 rounded-[20px] p-0 md:h-96 md:w-[80%]",
           "flex flex-col justify-center gap-5 lg:gap-18"
@@ -86,6 +96,7 @@ function HowItWorks() {
           backgroundImage: `radial-gradient(circle at 1px 1px, var(--grid-dots) 1px, transparent 0)`,
           backgroundSize: "10px 10px",
           backgroundRepeat: "repeat",
+          scale: translateScale,
         }}
       >
         <div
@@ -102,7 +113,7 @@ function HowItWorks() {
         <LLMComp cpuChip={cpuChip} />
         <Binance binance={binance} />
         <RAG rag={binance} />
-      </div>
+      </motion.div>
     </div>
   );
 }

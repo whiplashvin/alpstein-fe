@@ -102,7 +102,15 @@ function CryptoDash() {
                 }}
                 className="grid h-[calc(100vh-150px)] grid-rows-2 gap-2 pb-2"
               >
-                {currChart === "area" ? <TradingView /> : <TVCandleStick />}
+                {currChart === "area" ? (
+                  <div className="h-full rounded-lg border border-[var(--cardborder)]">
+                    <TradingView />
+                  </div>
+                ) : (
+                  <div className="h-full rounded-lg border border-[var(--cardborder)]">
+                    <TVCandleStick />
+                  </div>
+                )}
                 <Accordion />
               </motion.div>
             )}
@@ -183,12 +191,16 @@ function CryptoDash() {
             >
               {currChart === "area" ? (
                 <>
-                  <TradingView />
+                  <div className="h-full rounded-lg border border-[var(--cardborder)]">
+                    <TradingView />
+                  </div>
                   {showAreaModal && <TVLineModal />}
                 </>
               ) : (
                 <>
-                  <TVCandleStick />
+                  <div className="h-full rounded-lg border border-[var(--cardborder)]">
+                    <TVCandleStick />
+                  </div>
                   {showCandleModal && <TVCandleModal />}
                 </>
               )}
