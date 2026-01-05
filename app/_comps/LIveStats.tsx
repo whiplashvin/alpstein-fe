@@ -1,10 +1,89 @@
-import { IconType } from "react-icons";
+// import { IconType } from "react-icons";
 import { cn } from "../lib/utils";
-import { SiChartmogul } from "react-icons/si";
+// import { SiChartmogul } from "react-icons/si";
 import { SiStackblitz } from "react-icons/si";
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { useCurrentCryptoId } from "../lib/zustand";
 
+const status = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-activity"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M3 12h4l3 8l4 -16l3 8h4" />
+  </svg>
+);
+
+const priceAtCreation = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-clock-dollar"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M20.866 10.45a9 9 0 1 0 -7.815 10.488" />
+    <path d="M12 7v5l1.5 1.5" />
+    <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5" />
+    <path d="M19 21v1m0 -8v1" />
+  </svg>
+);
+const position = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-geometry"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M7 21l4 -12m2 0l1.48 4.439m.949 2.847l1.571 4.714" />
+    <path d="M10 7a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M4 12c1.526 2.955 4.588 5 8 5c3.41 0 6.473 -2.048 8 -5" />
+    <path d="M12 5v-2" />
+  </svg>
+);
+const pl = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-scale"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M7 20l10 0" />
+    <path d="M6 6l6 -1l6 1" />
+    <path d="M12 3l0 17" />
+    <path d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0" />
+    <path d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0" />
+  </svg>
+);
 function LIveStats({ includeHeading }: { includeHeading: boolean }) {
   const { cryptoData } = useCurrentCryptoId();
   return (
@@ -23,10 +102,10 @@ function LIveStats({ includeHeading }: { includeHeading: boolean }) {
         <Comp
           label="Price at creation"
           val={String(Number(cryptoData?.priceAtCreation).toFixed(2))}
-          Logo={SiChartmogul}
+          Logo={priceAtCreation}
         />
-        <Comp label="Status" val={cryptoData?.status} Logo={SiChartmogul} />
-        <Comp label="Position Triggered" val={cryptoData?.triggeredposition} Logo={SiChartmogul} />
+        <Comp label="Status" val={cryptoData?.status} Logo={status} />
+        <Comp label="Position Triggered" val={cryptoData?.triggeredposition} Logo={position} />
         <PandL id={cryptoData?.id} />
       </div>
     </div>
@@ -41,7 +120,7 @@ function Comp({
 }: {
   label: string;
   val?: string;
-  Logo: IconType;
+  Logo: JSX.Element;
   // classname?: string;
 }) {
   return (
@@ -54,7 +133,8 @@ function Comp({
     >
       <div className="flex w-full items-center justify-between">
         <span className="flex items-center gap-1">
-          <Logo size={15} />
+          {/* <Logo size={15} /> */}
+          {Logo}
           {label}
         </span>
         {label === "Status" && (
@@ -129,7 +209,8 @@ export function PandL({ id }: { id?: string }) {
     >
       <div className="flex w-full items-center justify-between">
         <span className="flex items-center gap-1">
-          <SiChartmogul size={15} />
+          {/* <SiChartmogul size={15} /> */}
+          {pl}
           P&L
         </span>
       </div>
