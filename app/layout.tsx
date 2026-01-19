@@ -4,6 +4,7 @@ import "./globals.css";
 import Provider from "./lib/Provider";
 import Navbar from "./_comps/Navbar";
 import LogoutModal from "./_comps/LogoutModal";
+import { Analytics } from "@vercel/analytics/next";
 
 // const josefin = Josefin_Sans({ subsets: ["latin"], display: "swap" });
 const incon = Inconsolata({ subsets: ["latin"], display: "swap" });
@@ -40,7 +41,10 @@ export default function RootLayout({
       >
         <Navbar />
         <LogoutModal />
-        <Provider>{children}</Provider>
+        <Provider>
+          {children}
+          <Analytics />
+        </Provider>
       </body>
     </html>
   );
