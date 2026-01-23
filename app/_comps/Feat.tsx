@@ -30,7 +30,7 @@ function Feat() {
         style={{
           scale: translateScale,
         }}
-        className="grid w-[60%] grid-cols-1 gap-10 md:grid-cols-2 lg:w-[90%] lg:grid-cols-4 lg:gap-5"
+        className="grid w-88 grid-cols-1 gap-10 md:w-[70%] md:grid-cols-2 lg:w-[90%] lg:grid-cols-4 lg:gap-5"
       >
         <Comp
           url={"/feature-1.png"}
