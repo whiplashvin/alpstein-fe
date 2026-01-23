@@ -30,7 +30,7 @@ function Feat() {
         style={{
           scale: translateScale,
         }}
-        className="grid w-88 grid-cols-1 gap-10 md:w-[70%] md:grid-cols-2 lg:w-[90%] lg:grid-cols-4 lg:gap-5"
+        className="grid w-72 grid-cols-1 gap-10 md:w-[80%] md:grid-cols-2 lg:w-[90%] lg:grid-cols-4 lg:gap-5"
       >
         <Comp
           url={"/feature-1.png"}
@@ -93,11 +93,12 @@ function Comp({
       className={cn(
         "flex h-86 w-full flex-col rounded-2xl p-2 lg:h-92",
         "border border-[var(--stats-comp-bg)]/90 bg-[var(--stats-comp-bg)]/30 backdrop-blur-xl",
-        "bg-radial-[at_20%_20%] from-transparent from-60% via-indigo-300/20 via-80% to-indigo-400/20 to-100%"
+        // "bg-radial-[at_20%_20%] from-transparent from-60% via-indigo-300/20 via-80% to-indigo-400/20 to-100%"
+        "bg-radial-[at_20%_20%] from-transparent from-70% via-cyan-200/10 via-90% to-cyan-300/10 to-100%"
       )}
     >
       <div className="relative h-2/3 overflow-hidden rounded-xl border border-[var(--stats-comp-inner-border)]/50 bg-[var(--stats-comp-inner)]/30 shadow-lg shadow-gray-500/50">
-        <div className="absolute inset-0 z-20 h-full w-full rounded-xl dark:bg-neutral-800/20"></div>
+        <div className="absolute inset-0 z-20 h-full w-full rounded-xl bg-neutral-500/10 dark:bg-neutral-800/20"></div>
         <motion.div className="perspective-distant">
           <Image
             src={url}
@@ -120,12 +121,10 @@ function Comp({
         </motion.div>
       </div>
       <div className="flex h-1/3 flex-col items-start justify-center">
-        <h2 className="text-base leading-5 font-medium text-[var(--secondarytext)] md:leading-7 lg:text-lg">
+        <h2 className="text-base leading-5 font-medium text-[var(--secondarytext)]/80 md:leading-7">
           {heading}
         </h2>
-        <p className="mt-2 text-xs font-extralight text-[var(--secondarytext)]/80 md:text-sm">
-          {subHeading}
-        </p>
+        <p className="mt-2 text-xs font-extralight text-[var(--secondarytext)]/80">{subHeading}</p>
       </div>
     </div>
   );
