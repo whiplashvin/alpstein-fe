@@ -64,7 +64,7 @@ function HowItWorks() {
         ? { logo: "14", svgH: "40", svgW: "250" }
         : { logo: "14", svgH: "30", svgW: "150" };
   return (
-    <div className="mt-52 flex flex-col items-center gap-10 bg-[var(--background)]">
+    <div className="mt-40 flex flex-col items-center gap-10 bg-[var(--background)]">
       <motion.span
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -76,7 +76,7 @@ function HowItWorks() {
       >
         HOW ALPSTEIN WORKS
       </motion.span>
-      <motion.p className="mx-auto w-[80%] text-center text-lg font-light text-[var(--secondarytext)]/70 md:w-full md:text-xl">
+      <motion.p className="mx-auto w-[80%] text-center text-base font-light text-[var(--secondarytext)]/70 md:w-full md:text-xl">
         At its core, Alpstein is a multi-process system,
         <br className="hidden md:block" /> all working in synergy to curate a single actionable
         output.

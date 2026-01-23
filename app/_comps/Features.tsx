@@ -42,7 +42,7 @@ function Features() {
   //         ? { height: "50", width: "50" }
   //         : { height: "40", width: "40" };
   return (
-    <div className="mt-52 flex flex-col items-center gap-10 bg-[var(--background)]">
+    <div className="mt-40 flex flex-col items-center gap-10 bg-[var(--background)]">
       <motion.span
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -54,7 +54,7 @@ function Features() {
       >
         WHY ALPSTEIN
       </motion.span>
-      <motion.p className="mx-auto w-[80%] text-center text-lg font-light text-[var(--secondarytext)]/70 md:w-full md:text-xl">
+      <motion.p className="mx-auto w-[80%] text-center text-base font-light text-[var(--secondarytext)]/70 md:w-full md:text-xl">
         Ever felt the need for someone who reads crypto articles for you,
         <br className="hidden md:block" /> also giving you a clear actionable path?
       </motion.p>
@@ -121,7 +121,7 @@ function Features() {
                 rx="1"
               />
             </motion.svg>
-            <h2 className="text-lg leading-5 font-medium text-[var(--secondarytext)] md:leading-7 lg:text-lg">
+            <h2 className="text-base leading-5 text-[var(--secondarytext)]/80 md:leading-7 lg:text-lg">
               LATEST CRYPTO ARTICLES
             </h2>
           </div>
@@ -209,7 +209,7 @@ function Features() {
             {/* <h2 className="text-lg leading-5 font-light text-[var(--secondarytext)]/90 md:leading-7 lg:text-3xl">
               GPT-4o analysis
             </h2> */}
-            <h2 className="text-lg leading-5 font-medium text-[var(--secondarytext)] md:leading-7 lg:text-lg">
+            <h2 className="text-base leading-5 text-[var(--secondarytext)]/80 md:leading-7 lg:text-lg">
               GPT-4o ANALYSIS
             </h2>
           </div>
@@ -279,7 +279,7 @@ function Features() {
             {/* <h2 className="text-lg leading-5 font-light text-[var(--secondarytext)]/90 md:leading-7 lg:text-3xl">
               Price tracking with P&L
             </h2> */}
-            <h2 className="text-lg leading-5 font-medium text-[var(--secondarytext)] md:leading-7 lg:text-lg">
+            <h2 className="text-base leading-5 text-[var(--secondarytext)]/80 md:leading-7 lg:text-lg">
               PRICE TRACKING WITH P&L
             </h2>
           </div>
