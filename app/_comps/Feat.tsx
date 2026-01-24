@@ -7,7 +7,7 @@ function Feat() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const translateScale = useTransform(scrollYProgress, [0.6, 1], [1, 0.75]);
   return (
-    <div className="mt-40 flex h-screen flex-col items-center gap-10 bg-[var(--background)]">
+    <div className={cn("mt-40 flex flex-col items-center gap-10 bg-[var(--background)]")}>
       <motion.span
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -30,7 +30,10 @@ function Feat() {
         style={{
           scale: translateScale,
         }}
-        className="grid w-72 grid-cols-1 gap-10 md:w-[80%] md:grid-cols-2 lg:w-[90%] lg:grid-cols-4 lg:gap-5"
+        className={cn(
+          "grid w-72 grid-cols-1 gap-10 md:w-[80%] md:grid-cols-2 lg:w-[90%] lg:grid-cols-4 lg:gap-5",
+          "rounded-xl border border-[var(--stats-comp-bg)]/90 bg-[var(--stats-comp-bg)]/30 p-2 backdrop-blur-xl"
+        )}
       >
         <Comp
           url={"/feature-1.png"}
@@ -94,7 +97,7 @@ function Comp({
         "flex h-86 w-full flex-col rounded-2xl p-2 lg:h-92",
         "border border-[var(--stats-comp-bg)]/90 bg-[var(--stats-comp-bg)]/30 backdrop-blur-xl",
         // "bg-radial-[at_20%_20%] from-transparent from-60% via-indigo-300/20 via-80% to-indigo-400/20 to-100%"
-        "bg-radial-[at_20%_20%] from-transparent from-70% via-cyan-200/10 via-90% to-cyan-300/10 to-100%"
+        "bg-radial-[at_20%_20%] from-transparent from-70% via-indigo-300/10 via-90% to-indigo-400/10 to-100%"
       )}
     >
       <div className="relative h-2/3 overflow-hidden rounded-xl border border-[var(--stats-comp-inner-border)]/50 bg-[var(--stats-comp-inner)]/30 shadow shadow-gray-500/30">

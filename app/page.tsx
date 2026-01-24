@@ -7,6 +7,8 @@ import SigninModal from "./_comps/SigninModal";
 import Feat from "./_comps/Feat";
 import { useEffect, useRef } from "react";
 import { useNavbarBackdropBlur } from "./lib/zustand";
+import FAQ from "./_comps/FAQ";
+import LandingFooter from "./_comps/LandingFooter";
 
 export default function Home() {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -50,6 +52,8 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <Feat />
+        <FAQ />
+        <LandingFooter />
       </div>
     </div>
   );
