@@ -66,13 +66,22 @@ function LandingFooter() {
             RESOURCES
           </div>
           <ul className="flex flex-col items-center justify-center gap-5">
-            <Link href={"/docs/about"} className="flex w-full pl-16 hover:scale-105">
+            <Link
+              href={"/docs/about"}
+              className="flex w-full pl-16 transition-all duration-300 ease-in-out hover:scale-105"
+            >
               About
             </Link>
-            <Link href={"/docs/underTheHood"} className="flex w-full pl-16 hover:scale-105">
+            <Link
+              href={"/docs/underTheHood"}
+              className="flex w-full pl-16 transition-all duration-300 ease-in-out hover:scale-105"
+            >
               Under The Hood
             </Link>
-            <Link href={"/docs/tui"} className="flex w-full pl-16 hover:scale-105">
+            <Link
+              href={"/docs/tui"}
+              className="flex w-full pl-16 transition-all duration-300 ease-in-out hover:scale-105"
+            >
               Alpstein TUI
             </Link>
           </ul>
