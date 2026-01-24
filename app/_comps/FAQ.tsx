@@ -64,7 +64,7 @@ function FAQ() {
         FREQUENTLY ASKED QUESTIONS
       </motion.span>
       <motion.p className="mx-auto w-[80%] text-center text-base font-thin text-[var(--secondarytext)]/70 md:w-full md:text-lg">
-        Here are some answers to questions you may have.
+        Here are answers to some questions you may have.
       </motion.p>
 
       <motion.ul className="l:w-[60%] flex w-[90%] flex-col gap-2 divide-y divide-[var(--stats-comp-bg)]">
@@ -75,8 +75,6 @@ function FAQ() {
             className={cn(
               "flex cursor-pointer flex-col items-center justify-center gap-5 text-xs font-thin text-[var(--secondarytext)]/70 md:text-sm",
               "p-4"
-              //   "border border-[var(--stats-comp-bg)]/90 bg-[var(--stats-comp-bg)]/30 backdrop-blur-xl"
-              //   "bg-radial-[at_20%_20%] from-transparent from-50% via-indigo-300/10 via-70% to-indigo-400/10 to-100%"
             )}
           >
             <motion.div className="flex w-full items-center justify-between">
