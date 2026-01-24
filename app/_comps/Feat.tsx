@@ -97,7 +97,7 @@ function Comp({
         "bg-radial-[at_20%_20%] from-transparent from-70% via-cyan-200/10 via-90% to-cyan-300/10 to-100%"
       )}
     >
-      <div className="relative h-2/3 overflow-hidden rounded-xl border border-[var(--stats-comp-inner-border)]/50 bg-[var(--stats-comp-inner)]/30 shadow-lg shadow-gray-500/50">
+      <div className="relative h-2/3 overflow-hidden rounded-xl border border-[var(--stats-comp-inner-border)]/50 bg-[var(--stats-comp-inner)]/30 shadow shadow-gray-500/30">
         <div className="absolute inset-0 z-20 h-full w-full rounded-xl bg-neutral-500/10 dark:bg-neutral-800/20"></div>
         <motion.div className="perspective-distant">
           <Image

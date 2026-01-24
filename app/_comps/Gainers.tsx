@@ -27,11 +27,11 @@ function Gainers({ gainers }: { gainers: Performer[] }) {
         {gainers.map((c, index) => (
           <li
             className={cn(
-              "l:text-xs grid grid-cols-3 items-center px-3 text-[10px] text-[var(--primarytext)] md:text-sm"
+              "l:text-[10px] grid grid-cols-3 items-center px-3 text-[10px] text-[var(--primarytext)] md:text-sm"
             )}
             key={index}
           >
-            <span className="flex items-center justify-start gap-1">
+            <span className="flex items-center justify-start gap-2">
               <Image
                 height={20}
                 width={20}
