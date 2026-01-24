@@ -6,11 +6,13 @@ import InfiniteSlide from "./InfiniteSlide";
 // import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import Button2 from "./Button2";
-import { useShowSigninModal, useUser } from "../lib/zustand";
+import { useRootRef, useShowSigninModal, useUser } from "../lib/zustand";
 import Image from "next/image";
 
 export function Hero() {
+  const ref = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLDivElement | null>(null);
+  const { setRef } = useRootRef();
   // const [imageUrl, setImageUrl] = useState("/hero-img-light.png");
   // const rootStyles = getComputedStyle(document.documentElement);
   // const defaultUrl = rootStyles.getPropertyValue("--url").trim();
@@ -22,6 +24,9 @@ export function Hero() {
   const { toggleShowModal } = useShowSigninModal();
 
   useEffect(() => {
+    if (ref.current) {
+      setRef(ref.current);
+    }
     const observer = new MutationObserver(() => {
       // const isDark = document.documentElement.classList.contains("dark");
       // if (isDark) {
@@ -40,12 +45,12 @@ export function Hero() {
       // setImageUrl("/hero-img-dark.png");
     }
     return () => observer.disconnect();
-  }, []);
+  }, [setRef]);
 
   const navigate = useRouter();
 
   return (
-    <div className="3xl:gap-18 relative z-0 flex w-full flex-col items-center gap-16">
+    <div ref={ref} className="3xl:gap-18 relative z-0 flex w-full flex-col items-center gap-16">
       <div className="md2:mt-40 3xl:mt-52 3xl:gap-8 z-10 mt-36 flex w-full flex-col items-center gap-5 lg:mt-46 lg:gap-5">
         <motion.h2
           initial={{
@@ -124,7 +129,7 @@ export function Hero() {
             }
           }}
         />
-        <Button2 text={"Read docs"} onClick={() => navigate.push("/docs")} />
+        <Button2 text={"Read docs"} onClick={() => navigate.push("/docs/about")} />
       </motion.div>
       <motion.div
         initial={{

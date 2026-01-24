@@ -1,13 +1,25 @@
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { cn } from "../lib/utils";
+import { useWhatAlpsRef } from "../lib/zustand";
 function Feat() {
+  const parentRef = useRef<HTMLDivElement | null>(null);
   const ref = useRef<HTMLDivElement | null>(null);
+  const { setRef } = useWhatAlpsRef();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const translateScale = useTransform(scrollYProgress, [0.6, 1], [1, 0.75]);
+
+  useEffect(() => {
+    if (parentRef.current) {
+      setRef(parentRef.current);
+    }
+  }, [setRef]);
   return (
-    <div className={cn("mt-40 flex flex-col items-center gap-10 bg-[var(--background)]")}>
+    <div
+      ref={parentRef}
+      className={cn("mt-40 flex flex-col items-center gap-10 bg-[var(--background)]")}
+    >
       <motion.span
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}

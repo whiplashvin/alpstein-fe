@@ -18,7 +18,7 @@ function Footer() {
 
   const LINKS = [
     { label: "Stats", url: "/dashboard", logo: <BiStats size={12} /> },
-    { label: "Docs", url: "/docs", logo: <SlDocs size={12} /> },
+    { label: "Docs", url: "/docs/about", logo: <SlDocs size={12} /> },
     { label: "Trades", url: "/trades", logo: <TbArrowsExchange2 size={12} /> },
   ];
   return (

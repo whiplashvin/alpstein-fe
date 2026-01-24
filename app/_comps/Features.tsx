@@ -1,13 +1,16 @@
 import { cn } from "../lib/utils";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
+import { useWhyAlpsRef } from "../lib/zustand";
 // import { useEffect, useState } from "react";
 
 // const TABLET_BREAKPOINT = 768;
 // const LAPTOP_BREAKPOINT = 1024;
 
 function Features() {
+  const parentRef = useRef<HTMLDivElement | null>(null);
   const ref = useRef<HTMLDivElement | null>(null);
+  const { setRef } = useWhyAlpsRef();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const translateScale = useTransform(scrollYProgress, [0.6, 1], [1, 0.75]);
   //   const [width, setWidth] = useState(0);
@@ -41,8 +44,13 @@ function Features() {
   //       : width >= TABLET_BREAKPOINT && width < LAPTOP_BREAKPOINT
   //         ? { height: "50", width: "50" }
   //         : { height: "40", width: "40" };
+  useEffect(() => {
+    if (parentRef.current) {
+      setRef(parentRef.current);
+    }
+  }, [setRef]);
   return (
-    <div className="mt-40 flex flex-col items-center gap-10 bg-[var(--background)]">
+    <div ref={parentRef} className="mt-40 flex flex-col items-center gap-10 bg-[var(--background)]">
       <motion.span
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}

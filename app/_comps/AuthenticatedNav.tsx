@@ -10,7 +10,7 @@ import { redirect } from "next/navigation";
 
 const PATHS = [
   { label: "News", path: "/dashboard" },
-  { label: "Docs", path: "/docs" },
+  { label: "Docs", path: "/docs/about" },
   { label: "Trades", path: "/trades" },
 ];
 

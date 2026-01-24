@@ -1,3 +1,4 @@
+import { RefObject } from "react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -344,6 +345,27 @@ const useNavbarBackdropBlur = create<NavbarBackdropBlur>(set => ({
   trigger: false,
   setTrigger: (val: boolean) => set({ trigger: val }),
 }));
+
+type RefType = {
+  ref: RefObject<Element | null>;
+  setRef: (el: HTMLDivElement) => void;
+};
+const useRootRef = create<RefType>(set => ({
+  ref: { current: null },
+  setRef: el => set({ ref: { current: el } }),
+}));
+const useWhyAlpsRef = create<RefType>(set => ({
+  ref: { current: null },
+  setRef: el => set({ ref: { current: el } }),
+}));
+const useHowAlpsRef = create<RefType>(set => ({
+  ref: { current: null },
+  setRef: el => set({ ref: { current: el } }),
+}));
+const useWhatAlpsRef = create<RefType>(set => ({
+  ref: { current: null },
+  setRef: el => set({ ref: { current: el } }),
+}));
 export {
   useTickerTapeDisplay,
   useCurrentCryptoId,
@@ -365,4 +387,8 @@ export {
   // useFooterHeight,
   useAppStats,
   useNavbarBackdropBlur,
+  useRootRef,
+  useWhyAlpsRef,
+  useHowAlpsRef,
+  useWhatAlpsRef,
 };

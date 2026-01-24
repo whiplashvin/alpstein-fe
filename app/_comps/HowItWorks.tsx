@@ -4,6 +4,7 @@ import { cn } from "../lib/utils";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
+import { useHowAlpsRef } from "../lib/zustand";
 
 // const MOBLE_BREAKPOINT = 430;
 const TABLET_BREAKPOINT = 768;
@@ -24,16 +25,21 @@ type Block = {
   right?: string;
 };
 function HowItWorks() {
+  const parentRef = useRef<HTMLDivElement | null>(null);
   const ref = useRef<HTMLDivElement | null>(null);
+  const { setRef } = useHowAlpsRef();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const translateScale = useTransform(scrollYProgress, [0.6, 1], [1, 0.75]);
   const [width, setWidth] = useState(0);
   useEffect(() => {
+    if (parentRef.current) {
+      setRef(parentRef.current);
+    }
     const update = () => setWidth(window.innerWidth);
     update(); // immediate first run
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
-  }, []);
+  }, [setRef]);
 
   const cpuChip = width! >= LAPTOP_BREAKPOINT ? "24" : width! >= TABLET_BREAKPOINT ? "20" : "14";
   const binance: Binance =
@@ -64,7 +70,7 @@ function HowItWorks() {
         ? { logo: "14", svgH: "40", svgW: "250" }
         : { logo: "14", svgH: "30", svgW: "150" };
   return (
-    <div className="mt-40 flex flex-col items-center gap-10 bg-[var(--background)]">
+    <div ref={parentRef} className="mt-40 flex flex-col items-center gap-10 bg-[var(--background)]">
       <motion.span
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
