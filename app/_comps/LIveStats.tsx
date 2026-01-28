@@ -1,6 +1,4 @@
-// import { IconType } from "react-icons";
 import { cn } from "../lib/utils";
-// import { SiChartmogul } from "react-icons/si";
 import { SiStackblitz } from "react-icons/si";
 import { JSX, useEffect, useState } from "react";
 import { useCurrentCryptoId } from "../lib/zustand";
@@ -89,7 +87,6 @@ function LIveStats({ includeHeading }: { includeHeading: boolean }) {
   return (
     <div className={cn("flex w-full flex-col gap-1 rounded-lg")}>
       {includeHeading && (
-        // <span className="font:medium flex items-center gap-2 text-start text-sm text-[var(--secondarytext)] md:font-semibold">
         <span className="font:medium flex items-center gap-2 text-start text-sm text-[var(--secondarytext)] md:text-xs md:font-semibold 2xl:text-sm">
           Live Stats{" "}
           <span className="text-violet-500">
@@ -112,28 +109,16 @@ function LIveStats({ includeHeading }: { includeHeading: boolean }) {
   );
 }
 
-function Comp({
-  label,
-  val,
-  Logo,
-  // classname,
-}: {
-  label: string;
-  val?: string;
-  Logo: JSX.Element;
-  // classname?: string;
-}) {
+function Comp({ label, val, Logo }: { label: string; val?: string; Logo: JSX.Element }) {
   return (
     <div
       className={cn(
-        // "flex flex-col items-start justify-center rounded-lg p-2 text-[10px] text-[var(--secondarytext)]",
         "flex flex-col items-start justify-center rounded-lg p-2 text-[10px] text-[var(--secondarytext)] md:p-1 xl:p-1.5 2xl:p-1.5",
         "w-full border border-[var(--cardborder)]"
       )}
     >
       <div className="flex w-full items-center justify-between">
         <span className="flex items-center gap-1">
-          {/* <Logo size={15} /> */}
           {Logo}
           {label}
         </span>
@@ -150,7 +135,6 @@ function Comp({
           </span>
         )}
       </div>
-      {/* <span className="text-base font-light text-[var(--primarytext)] md:text-lg"> */}
       <span className="text-base font-medium text-[var(--primarytext)] 2xl:text-lg">{val}</span>
     </div>
   );
@@ -189,8 +173,6 @@ export function PandL({ id }: { id?: string }) {
       clearInterval(heartBeatInterval);
     };
     return () => {
-      // ws.send(JSON.stringify({ event: "UNSUB", payload: id }));
-      // Only send UNSUB if socket is open
       if (ws.readyState === WebSocket.OPEN) {
         ws.send(JSON.stringify({ event: "UNSUB", payload: id }));
       }
@@ -202,14 +184,12 @@ export function PandL({ id }: { id?: string }) {
   return (
     <div
       className={cn(
-        // "flex flex-col items-start justify-center rounded-lg p-2 text-[10px] text-[var(--secondarytext)]",
         "flex flex-col items-start justify-center rounded-lg p-2 text-[10px] text-[var(--secondarytext)] md:p-1 xl:p-1.5",
         "w-full border border-[var(--cardborder)]"
       )}
     >
       <div className="flex w-full items-center justify-between">
         <span className="flex items-center gap-1">
-          {/* <SiChartmogul size={15} /> */}
           {pl}
           P&L
         </span>
@@ -217,7 +197,6 @@ export function PandL({ id }: { id?: string }) {
       {value ? (
         <span
           className={cn(
-            // "text-base font-light text-[var(--primarytext)] md:text-lg",
             "text-base font-medium text-[var(--primarytext)] 2xl:text-lg",
             `${kind === "profit" ? "text-green-500" : "text-red-500"}`
           )}

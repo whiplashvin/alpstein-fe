@@ -1,4 +1,5 @@
 import { cn } from "@/app/lib/utils";
+import Image from "next/image";
 
 function page() {
   return (
@@ -7,6 +8,14 @@ function page() {
         "relative max-h-[calc(100vh-150px)] overflow-y-auto md:pt-10 lg:max-h-[calc(100vh-104px)]"
       )}
     >
+      <div className="relative h-[200px] w-full">
+        <Image
+          src="/TUI-1.png"
+          alt="tui-image"
+          fill
+          className={cn("rounded-lg object-cover object-top")}
+        />
+      </div>
       <div className="w-full tracking-wide text-[var(--primarytext)] md:mt-7 md:px-10 lg:mt-14 xl:px-20">
         <div className="my-5 text-xs font-light text-[var(--secondarytext)] md:text-sm">
           <h3 className="text-lg font-semibold tracking-normal text-[var(--primarytext)]">
@@ -36,14 +45,21 @@ function page() {
             Installing the TUI is as simple as any command-line tool. If you&apos;re on macOS or
             Linux with Homebrew:
           </p>
-          <pre className="my-3 rounded-md bg-zinc-900 p-4 text-sm text-zinc-100">
+          <pre className="my-3 rounded-lg bg-zinc-900 p-4 text-sm text-zinc-100">
             <code>brew tap alpstein/tap{"\n"}brew install alpstein</code>
           </pre>
           <p className="mt-3">
             Once installed, launch it with a single command. You&apos;ll be prompted to enter your
             authentication key, which connects the TUI to your Alpstein account securely.
           </p>
-
+          <div className="relative mt-10 h-[300px] w-full">
+            <Image
+              src="/TUI-2.png"
+              alt="tui-image"
+              fill
+              className={cn("rounded-lg object-cover object-top")}
+            />
+          </div>
           <h4 className="mt-6 text-base font-semibold text-[var(--primarytext)]">
             What you get in the terminal
           </h4>
@@ -85,19 +101,24 @@ function page() {
           </p>
           <ul className="my-3 flex list-disc flex-col gap-2 pl-6">
             <li>
-              <code>[n]</code> — Jump to the next news article
+              <code>[n]</code> — Jump to the next page
             </li>
             <li>
-              <code>[d]</code> — Open documentation (this page!)
+              <code>[p]</code> — Jump to the prev page
             </li>
             <li>
-              <code>[t]</code> — View trades and position history
+              <code>[d]</code> — Open documentation{" "}
+              <span className="text-[var(--primarytext)]/30">(in upcoming update)</span>
+            </li>
+            <li>
+              <code>[t]</code> — View trades and position history{" "}
+              <span className="text-[var(--primarytext)]/30">(in upcoming update)</span>
             </li>
             <li>
               <code>[↑] [↓]</code> — Scroll through news items
             </li>
             <li>
-              <code>[x]</code> — Open expanded news view
+              <code>[x]</code> — Visit news source
             </li>
           </ul>
           <p className="mt-3">
@@ -114,11 +135,11 @@ function page() {
             terminal session to your Alpstein account using the same secure JWT-based authentication
             as the web interface.
           </p>
-          <p className="mt-3">
+          {/* <p className="mt-3">
             The key is stored locally and reused for future sessions, so you only authenticate once.
             If you need to switch accounts or revoke access, simply clear the stored credentials and
             re-authenticate.
-          </p>
+          </p> */}
 
           <h4 className="mt-6 text-base font-semibold text-[var(--primarytext)]">
             Real-time updates, no polling
@@ -152,7 +173,7 @@ function page() {
           <h4 className="mt-6 text-base font-semibold text-[var(--primarytext)]">
             Try it yourself
           </h4>
-          <pre className="my-3 rounded-md bg-zinc-900 p-4 text-sm text-zinc-100">
+          <pre className="my-3 rounded-lg bg-zinc-900 p-4 text-sm text-zinc-100">
             <code>brew install alpstein{"\n"}alpstein</code>
           </pre>
           <p className="mt-3">

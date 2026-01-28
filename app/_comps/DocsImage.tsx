@@ -13,9 +13,9 @@ export default function DocsImage() {
       />
 
       <div className="absolute inset-0 rounded-md bg-neutral-700/30" />
-      <div className="absolute bottom-3 left-0 pl-10 text-neutral-700 lg:w-3/7">
+      <div className="absolute bottom-3 left-0 pl-10 text-neutral-700 lg:w-4/7">
         <h2 className="text-2xl font-medium">Welcome to Alpstein</h2>
-        <p className="text-[8px] leading-[15px] font-extralight tracking-wide text-wrap text-neutral-300 md:text-xs lg:text-sm">
+        <p className="text-[8px] leading-[15px] font-extralight tracking-widest text-wrap text-neutral-700 md:text-xs lg:text-sm">
           Alpstein gives you an extra edge with assisted AI insights and real-time market data.
         </p>
       </div>

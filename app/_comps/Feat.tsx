@@ -49,7 +49,7 @@ function Feat() {
       >
         <Comp
           url={"/feature-1.png"}
-          width={240}
+          width={220}
           height={200}
           heading={"Relax! its just an opinion."}
           subHeading={
@@ -75,7 +75,8 @@ function Feat() {
           }
         />
         <Comp
-          url={"/feat-4.png"}
+          url={"/TUI-1.png"}
+          url2={"/TUI-2.png"}
           width={500}
           height={300}
           heading={"Think GUI is for dummies?"}
@@ -92,12 +93,14 @@ export default Feat;
 
 function Comp({
   url,
+  url2,
   width,
   height,
   heading,
   subHeading,
 }: {
   url: string;
+  url2?: string;
   width: number;
   height: number;
   heading: string;
@@ -113,14 +116,14 @@ function Comp({
       )}
     >
       <div className="relative h-2/3 overflow-hidden rounded-xl border border-[var(--stats-comp-inner-border)]/50 bg-[var(--stats-comp-inner)]/30 shadow shadow-gray-500/30">
-        <div className="absolute inset-0 z-20 h-full w-full rounded-xl bg-neutral-500/10 dark:bg-neutral-800/20"></div>
+        <div className="absolute inset-0 z-20 h-full w-full rounded-xl bg-neutral-100/10 dark:bg-neutral-900/10"></div>
         <motion.div className="perspective-distant">
           <Image
-            src={url}
+            src={url === "/TUI-1.png" ? url2! : url}
             width={width}
             height={height}
             alt="fads"
-            className="absolute rounded-xl mask-b-from-20% shadow-xl"
+            className={`absolute rounded-xl ${url !== "/TUI-1.png" ? "mask-b-from-20%" : ""} shadow-xl`}
             style={{ transform: "rotateY(40deg) rotateX(45deg) rotateZ(0deg)" }}
           />
         </motion.div>
