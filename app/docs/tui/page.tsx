@@ -46,7 +46,7 @@ function page() {
             Linux with Homebrew:
           </p>
           <pre className="my-3 rounded-lg bg-zinc-900 p-4 text-sm text-zinc-100">
-            <code>brew tap alpstein/tap{"\n"}brew install alpstein</code>
+            <code>brew install whiplashvin/whiplashvin/alpstein-tui</code>
           </pre>
           <p className="mt-3">
             Once installed, launch it with a single command. You&apos;ll be prompted to enter your
@@ -174,7 +174,7 @@ function page() {
             Try it yourself
           </h4>
           <pre className="my-3 rounded-lg bg-zinc-900 p-4 text-sm text-zinc-100">
-            <code>brew install alpstein{"\n"}alpstein</code>
+            <code> brew install whiplashvin/whiplashvin/alpstein-tui{"\n"}alpstein-tui</code>
           </pre>
           <p className="mt-3">
             That&apos;s it. Two commands, and you&apos;re tracking crypto markets from your
