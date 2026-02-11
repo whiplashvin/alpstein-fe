@@ -16,9 +16,9 @@ function page() {
           className={cn("rounded-lg object-cover object-top")}
         />
       </div>
-      <div className="w-full tracking-wide text-[var(--primarytext)] md:mt-7 md:px-10 lg:mt-14 xl:px-20">
-        <div className="my-5 text-xs font-light text-[var(--secondarytext)] md:text-sm">
-          <h3 className="text-lg font-semibold tracking-normal text-[var(--primarytext)]">
+      <div className="w-full tracking-wide md:mt-7 md:px-10 lg:mt-14 xl:px-20">
+        <div className="my-5 text-xs font-light text-[var(--primarytext)]/60 md:text-base">
+          <h3 className="text-lg font-medium tracking-normal text-[var(--primarytext)] md:text-2xl">
             Alpstein TUI — Trading insights in your terminal
           </h3>
           <p className="mt-4">

@@ -9,13 +9,13 @@ function page() {
       )}
     >
       <DocsImage />
-      <div className="w-full tracking-wide text-[var(--primarytext)] md:mt-7 md:px-10 lg:mt-14 xl:px-20">
-        <div className="my-5 text-xs font-light text-[var(--secondarytext)] md:text-sm">
-          <h3 className="text-lg font-semibold tracking-normal text-[var(--primarytext)]">
+      <div className="w-full tracking-wide md:mt-7 md:px-10 lg:mt-14 xl:px-20">
+        <div className="my-5 text-xs font-light text-[var(--primarytext)]/60 md:text-base">
+          <h3 className="text-lg font-medium tracking-normal text-[var(--primarytext)] md:text-2xl">
             Crypto trading shouldn&apos;t feel like information overload. Alpstein cuts through the
             noise.
           </h3>
-          <p className="mt-4">
+          <p className="mt-5">
             The crypto market moves fast. News breaks every hour, prices shift in seconds, and
             sentiment changes with a single tweet. For traders trying to stay informed, it&apos;s
             exhausting—dozens of tabs open, endless scrolling, and still no clear picture of what

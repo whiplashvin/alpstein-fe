@@ -7,17 +7,9 @@ function page() {
         "relative max-h-[calc(100vh-150px)] overflow-y-auto md:pt-10 lg:max-h-[calc(100vh-104px)]"
       )}
     >
-      {/* <Image
-        loading="lazy"
-        src="/alps-range.jpg"
-        alt="Alpstein"
-        fill
-        priority={false}
-        className="rounded-lg object-cover"
-      /> */}
-      <div className="w-full tracking-wide text-[var(--primarytext)] md:mt-7 md:px-10 lg:mt-14 xl:px-20">
-        <div className="my-5 text-xs font-light text-[var(--secondarytext)] md:text-sm">
-          <h3 className="text-lg font-semibold tracking-normal text-[var(--primarytext)]">
+      <div className="w-full tracking-wide md:mt-7 md:px-10 lg:mt-14 xl:px-20">
+        <div className="my-5 text-xs font-light text-[var(--primarytext)]/60 md:text-base">
+          <h3 className="text-lg font-medium tracking-normal text-[var(--primarytext)] md:text-2xl">
             How Alpstein works under the hood
           </h3>
           <p className="mt-4">
