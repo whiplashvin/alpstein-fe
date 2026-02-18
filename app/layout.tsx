@@ -47,9 +47,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Alpstein",
+    creator: "https://whiplashvin.dev",
     description:
       "A multi process system that tracks important crypto articles in real-time and an actionable, unbiased and market aware opinion is generated with live P&L.",
-    images: ["/landing.png"],
+    images: ["http://alpstein.tech/landing.png"],
   },
 };
 export default function RootLayout({
