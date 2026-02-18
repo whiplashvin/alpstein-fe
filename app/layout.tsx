@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Alpstein",
     images: [
       {
-        url: "/logo.svg",
+        url: "/landing.png",
         width: 1000,
         height: 1000,
       },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Alpstein",
     description:
       "A multi process system that tracks important crypto articles in real-time and an actionable, unbiased and market aware opinion is generated with live P&L.",
-    images: ["/logo.svg"],
+    images: ["/landing.png"],
   },
 };
 export default function RootLayout({
