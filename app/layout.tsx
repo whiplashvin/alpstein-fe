@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     creator: "https://whiplashvin.dev",
     description:
       "A multi process system that tracks important crypto articles in real-time and an actionable, unbiased and market aware opinion is generated with live P&L.",
-    images: ["http://alpstein.tech/landing.png"],
+    images: ["https://alpstein.tech/landing.png"],
   },
 };
 export default function RootLayout({
