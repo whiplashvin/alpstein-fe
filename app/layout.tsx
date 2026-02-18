@@ -24,8 +24,32 @@ export const metadata: Metadata = {
     template: "%s / Alpstein",
     default: "Alsptein",
   },
+  description:
+    "A multi process system that tracks important crypto articles in real-time and an actionable, unbiased and market aware opinion is generated with live P&L.",
   icons: {
     icon: "/logo.svg",
+  },
+  openGraph: {
+    title: "Alpstein",
+    description:
+      "A multi process system that tracks important crypto articles in real-time and an actionable, unbiased and market aware opinion is generated with live P&L.",
+    url: "https://alpstein.tech",
+    siteName: "Alpstein",
+    images: [
+      {
+        url: "/logo.svg",
+        width: 1000,
+        height: 1000,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alpstein",
+    description:
+      "A multi process system that tracks important crypto articles in real-time and an actionable, unbiased and market aware opinion is generated with live P&L.",
+    images: ["/logo.svg"],
   },
 };
 export default function RootLayout({

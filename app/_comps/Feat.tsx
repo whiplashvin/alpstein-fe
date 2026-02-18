@@ -53,7 +53,7 @@ function Feat() {
           height={200}
           heading={"Relax! its just an opinion."}
           subHeading={
-            "Get AI opinionated signals on what actions to take. A signal can be bullish, bearishor unclear."
+            "Get AI opinionated signals on what actions to take. A signal can be bullish, bearish or unclear."
           }
         />
         <Comp
@@ -71,7 +71,7 @@ function Feat() {
           height={200}
           heading={"Get a feel of the market."}
           subHeading={
-            "Yes, markets have sentiments too. Alpstein tracks bullish, bearish, volatility and whale movement."
+            "Yes, markets have sentiments too. Alpstein tracks bullish, bearish, volatility and whale movements."
           }
         />
         <Comp
@@ -81,7 +81,7 @@ function Feat() {
           height={300}
           heading={"Think GUI is for dummies?"}
           subHeading={
-            "Like doing everything from the terminal? We&apos;ve got you covered, introducing Alsptein TUI."
+            "Like doing everything from the terminal? We've got you covered, introducing Alsptein TUI."
           }
         />
       </motion.div>
