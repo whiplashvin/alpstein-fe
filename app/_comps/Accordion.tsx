@@ -108,7 +108,6 @@ function Comp({
 }) {
   const show = activeIndex === index;
   const maxHeight = numItems === 4 ? 28 : 48;
-  alert(numItems);
   return (
     <div
       className={cn(
