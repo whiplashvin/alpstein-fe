@@ -68,9 +68,9 @@ function Stats() {
 
   return (
     <motion.div className="flex w-full flex-col gap-1 rounded-lg">
-      <span className="font:medium text-sm text-[var(--secondarytext)] md:text-xs md:font-semibold 2xl:text-sm">
+      {/* <span className="font:medium text-sm text-[var(--secondarytext)] md:text-xs md:font-semibold 2xl:text-sm">
         OHLC
-      </span>
+      </span> */}
       {isLoading ? (
         <div className="flex h-30 w-full items-center justify-center rounded-lg border border-[var(--cardborder)]">
           <Spinner showPrice={true} />
@@ -92,7 +92,7 @@ function Comp({ label, val, Logo }: { label: string; val: string; Logo: IconType
     <div
       className={cn(
         // "flex flex-col items-start justify-center rounded-lg p-2 text-[10px] text-[var(--secondarytext)]",
-        "flex flex-col items-start justify-center rounded-lg p-2 text-[10px] text-[var(--secondarytext)] md:p-1 xl:p-1.5 2xl:p-1.5",
+        "flex flex-col items-start justify-center gap-2 rounded-lg p-2 text-[10px] text-[var(--secondarytext)] md:p-1 xl:p-1.5 2xl:p-1.5",
         "border border-[var(--cardborder)]"
       )}
     >
@@ -103,7 +103,8 @@ function Comp({ label, val, Logo }: { label: string; val: string; Logo: IconType
         </span>
       </div>
       {/* <span className="text-base font-light text-[var(--primarytext)] md:text-lg"> */}
-      <span className="font-mdeium text-base text-[var(--primarytext)] 2xl:text-lg">{val}</span>
+      {/* <span className="font-mdeium text-base text-[var(--primarytext)] 2xl:text-lg">{val}</span> */}
+      <span className="text-sm font-light text-[var(--primarytext)]">{val}</span>
     </div>
   );
 }

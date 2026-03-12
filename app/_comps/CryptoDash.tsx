@@ -17,6 +17,7 @@ import TVLineModal from "./TVModal";
 import NewsHeading from "./NewsHeading";
 import DashNav from "./DashNav";
 import { Activity, useEffect, useState } from "react";
+import MACDChart from "./MACD";
 
 const SentimentGauge = dynamic(() => import("./SentimentGauge"), {
   ssr: false,
@@ -35,7 +36,7 @@ const Accordion = dynamic(() => import("./Accordion"), {
   ssr: false,
   loading: () => <AccordionSkeleton />,
 });
-const LLMQuestions = dynamic(() => import("./LLMQuestions"), { ssr: false });
+const CryptoAbout = dynamic(() => import("./CryptoAbout"), { ssr: false });
 
 function CryptoDash() {
   const { currentCryptoId } = useCurrentCryptoId();
@@ -76,13 +77,21 @@ function CryptoDash() {
                   ease: "easeIn",
                   delay: 0.3,
                 }}
-                className="flex h-[calc(100vh-150px)] flex-col gap-4 overflow-y-scroll pb-2"
+                className="flex h-[calc(100vh-150px)] flex-col gap-4 pb-2"
               >
                 <CoinHeading />
-                <Signals includeHeading={true} />
+                {/* <Signals includeHeading={true} />
                 <Indicators />
                 <Stats />
+                <LiveStats includeHeading={true} /> */}
+                <Signals includeHeading={true} />
                 <LiveStats includeHeading={true} />
+                <div className="flex min-h-0 flex-1 flex-col gap-1">
+                  <span className="font:medium text-sm text-[var(--secondarytext)] md:text-xs md:font-semibold 2xl:text-sm">
+                    Rationale
+                  </span>
+                  <Accordion />
+                </div>
               </motion.div>
             )}
             {currTab === 1 && (
@@ -111,7 +120,15 @@ function CryptoDash() {
                     <TVCandleStick />
                   </div>
                 )}
-                <Accordion />
+
+                <div className="grid h-full grid-rows-[1fr_2.5fr] gap-2">
+                  <div className="flex gap-2">
+                    <Indicators />
+                    <Stats />
+                  </div>
+                  <MACDChart />
+                </div>
+                {/* <Accordion /> */}
               </motion.div>
             )}
             {currTab === 2 && (
@@ -134,7 +151,7 @@ function CryptoDash() {
                 <NewsHeading />
                 <PubOpinion />
                 <SentimentGauge />
-                <LLMQuestions />
+                <CryptoAbout />
               </motion.div>
             )}
           </div>
@@ -163,15 +180,18 @@ function CryptoDash() {
                 ease: "easeIn",
                 delay: 0.3,
               }}
-              // className="flex h-[calc(100vh-90px)] flex-col gap-4 bg-rose-500"
-              // className="grid h-[calc(100vh-100px)] grid-rows-[0.5fr_2fr_1.5fr_1.5fr_1.5fr]"
-              className="grid h-[calc(100vh-100px)] max-h-[calc(1000px-100px)] grid-rows-[0.1fr_0.7fr_0.5fr_0.5fr_0.5fr] gap-4"
+              // className="grid h-[calc(100vh-100px)] max-h-[calc(1000px-100px)] grid-rows-[0.1fr_0.7fr_0.5fr_0.5fr_0.5fr] gap-2"
+              className="grid h-[calc(100vh-100px)] max-h-[calc(1000px-100px)] grid-rows-[0.1fr_0.5fr_0.5fr_2fr] gap-2"
             >
               <CoinHeading />
               <Signals includeHeading={true} />
-              <Indicators />
-              <Stats />
               <LiveStats includeHeading={true} />
+              <div className="flex flex-col gap-1">
+                <span className="font:medium text-sm text-[var(--secondarytext)] md:text-xs md:font-semibold 2xl:text-sm">
+                  Rationale
+                </span>
+                <Accordion />
+              </div>
             </motion.div>
             <motion.div
               initial={{
@@ -204,7 +224,13 @@ function CryptoDash() {
                   {showCandleModal && <TVCandleModal />}
                 </>
               )}
-              <Accordion />
+              <div className="grid h-full grid-rows-[1fr_2.5fr] gap-2">
+                <div className="flex gap-2">
+                  <Indicators />
+                  <Stats />
+                </div>
+                <MACDChart />
+              </div>
             </motion.div>
             <motion.div
               initial={{
@@ -226,7 +252,7 @@ function CryptoDash() {
               <NewsHeading />
               <PubOpinion />
               <SentimentGauge />
-              <LLMQuestions />
+              <CryptoAbout />
             </motion.div>
           </div>
         </Activity>

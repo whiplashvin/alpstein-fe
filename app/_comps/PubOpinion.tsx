@@ -52,7 +52,7 @@ function PubOpinion() {
         setUpSelect(false);
         setDownSelect(false);
         setVoteCasted(false);
-        setMessage("*You can cast your vote just once.");
+        // setMessage("*You can cast your vote just once.");
       };
     }
   }, [data, isLoading]);
@@ -60,7 +60,6 @@ function PubOpinion() {
   return (
     <div
       className={cn(
-        // "flex w-full flex-col gap-3 rounded-lg",
         "flex w-full flex-col gap-3 rounded-lg p-2 text-[10px] text-[var(--secondarytext)] md:gap-2 md:p-1 xl:p-1.5 2xl:gap-3 2xl:p-3",
         "border border-[var(--cardborder)]"
       )}
@@ -167,7 +166,7 @@ function Comp({
         </button>
         {label}
       </span>
-      <span className="text-lg font-medium text-[var(--primarytext)]">{val}</span>
+      <span className="text-lg font-light text-[var(--primarytext)]">{val}</span>
     </div>
   );
 }

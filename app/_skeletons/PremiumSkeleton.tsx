@@ -4,7 +4,7 @@ function PremiumSkeleton() {
   return (
     <div
       className={cn(
-        "l:h-51 l2:h-64 md2:h-80 relative grid h-full w-full grid-rows-[3fr_1fr] rounded-2xl rounded-xl p-2 md:h-70 lg:flex-1",
+        "l:h-51 l2:h-84 md2:h-80 relative grid h-full w-full grid-rows-[3fr_1fr] rounded-2xl rounded-xl p-2 md:h-70 lg:flex-1",
         // "shadow-[var(--shadow)] transition-shadow duration-500"
         "overflow-hidden border border-[var(--stats-comp-bg)] bg-[var(--stats-comp-bg)]/20 backdrop-blur-xl"
       )}

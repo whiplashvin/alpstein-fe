@@ -102,7 +102,7 @@ function LIveStats({ includeHeading }: { includeHeading: boolean }) {
           Logo={priceAtCreation}
         />
         <Comp label="Status" val={cryptoData?.status} Logo={status} />
-        <Comp label="Position Triggered" val={cryptoData?.triggeredposition} Logo={position} />
+        <Comp label="Triggered" val={cryptoData?.triggeredposition} Logo={position} />
         <PandL id={cryptoData?.id} />
       </div>
     </div>
@@ -135,7 +135,8 @@ function Comp({ label, val, Logo }: { label: string; val?: string; Logo: JSX.Ele
           </span>
         )}
       </div>
-      <span className="text-base font-medium text-[var(--primarytext)] 2xl:text-lg">{val}</span>
+      {/* <span className="text-base font-medium text-[var(--primarytext)] 2xl:text-lg">{val}</span> */}
+      <span className="text-sm font-light text-[var(--primarytext)]">{val}</span>
     </div>
   );
 }
@@ -197,7 +198,8 @@ export function PandL({ id }: { id?: string }) {
       {value ? (
         <span
           className={cn(
-            "text-base font-medium text-[var(--primarytext)] 2xl:text-lg",
+            // "text-base font-medium text-[var(--primarytext)] 2xl:text-lg",
+            "text-sm font-light text-[var(--primarytext)]",
             `${kind === "profit" ? "text-green-500" : "text-red-500"}`
           )}
         >

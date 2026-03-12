@@ -35,18 +35,20 @@ function Accordion() {
     setIndex(null);
   }, [cryptoData?.id]);
 
+  const numItems = cryptoData?.position === "unclear" || cryptoData?.waitout !== "" ? 4 : 3;
+
   return (
     <motion.div
       key={cryptoData?.id}
       variants={parentVariant}
       initial="hidden"
       animate="show"
-      className={cn("flex h-full w-full flex-col gap-3 rounded-lg p-1", "bg-slate-500/10")}
+      className={cn("flex h-full w-full flex-col gap-3 rounded-lg p-0", "bg-slate-500/10")}
     >
       {cryptoData?.buy !== "" && (
         <Comp
           index={0}
-          heading="Why should you consider buying"
+          heading="Should you consider buying"
           content={cryptoData!.buy}
           activeIndex={activeIndex}
           setActiveIndex={setIndex}
@@ -55,8 +57,17 @@ function Accordion() {
       {cryptoData?.sell !== "" && (
         <Comp
           index={1}
-          heading="Why should you consider selling"
+          heading="Should you consider selling"
           content={cryptoData!.sell}
+          activeIndex={activeIndex}
+          setActiveIndex={setIndex}
+        />
+      )}
+      {cryptoData?.waitout !== "" && cryptoData?.position !== "unclear" && (
+        <Comp
+          index={3}
+          heading="Should you consider waiting out"
+          content={cryptoData!.waitout}
           activeIndex={activeIndex}
           setActiveIndex={setIndex}
         />
@@ -68,21 +79,13 @@ function Accordion() {
         activeIndex={activeIndex}
         setActiveIndex={setIndex}
       />
-      {cryptoData?.waitout !== "" && cryptoData?.position !== "unclear" && (
-        <Comp
-          index={3}
-          heading="Why should you consider waiting out"
-          content={cryptoData!.waitout}
-          activeIndex={activeIndex}
-          setActiveIndex={setIndex}
-        />
-      )}
       <Comp
         index={4}
         heading="Synopsis of the article"
         content={cryptoData!.synopsis}
         activeIndex={activeIndex}
         setActiveIndex={setIndex}
+        numItems={numItems}
       />
     </motion.div>
   );
@@ -94,18 +97,22 @@ function Comp({
   content,
   activeIndex,
   setActiveIndex,
+  numItems,
 }: {
   index: number;
   heading: string;
   content: string;
   activeIndex: number | null;
   setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>;
+  numItems?: number;
 }) {
   const show = activeIndex === index;
+  const maxHeight = numItems === 4 ? 28 : 48;
+  alert(numItems);
   return (
     <div
       className={cn(
-        `relative w-full ${!show ? "h-12" : "h-36"} p-3 font-light transition-all duration-500`
+        `relative w-full ${!show ? "h-12" : "h-32"} p-3 font-light transition-all duration-500`
       )}
     >
       <motion.div
@@ -114,22 +121,25 @@ function Comp({
         className="flex cursor-pointer items-center justify-between text-[var(--secondarytext)]"
         onClick={() => setActiveIndex(show ? null : index)}
       >
-        <p className="text-[14px] font-light">{heading}</p>
+        <p className="text-[12px] font-light">{heading}</p>
         <button className="cursor-pointer text-[--primarytext]">
           {!show ? <IoChevronDown /> : <IoChevronUp />}
         </button>
       </motion.div>
 
       <motion.p
-        className={`my-2 ml-4 text-[10px] tracking-wider text-[var(--secondarytext)] transition-all 2xl:text-[12px] ${show ? "max-h-28 max-w-full overflow-y-auto opacity-100 md:max-h-38" : "opacity-0"} transition-all duration-500`}
+        className={`my-2 overflow-y-auto text-[10px] tracking-wider text-[var(--secondarytext)] transition-all ease-in-out ${
+          show ? `max-h-${maxHeight} opacity-100 duration-300` : "max-h-0 opacity-0 duration-0"
+        }`}
       >
         {content}
       </motion.p>
+
       {index !== 4 && (
         <motion.div
           //@ts-expect-error
           variants={childVariant}
-          className={`absolute bottom-0 left-0 h-[0.5px] w-full bg-gradient-to-r from-transparent from-[-10%] via-zinc-700 via-50% to-transparent to-110%`}
+          className={`absolute bottom-0 left-0 h-[0.5px] w-full bg-gradient-to-r from-transparent from-[-5%] via-zinc-800 via-50% to-transparent to-105%`}
         ></motion.div>
       )}
     </div>

@@ -366,6 +366,17 @@ const useWhatAlpsRef = create<RefType>(set => ({
   ref: { current: null },
   setRef: el => set({ ref: { current: el } }),
 }));
+
+type MACDPrices = {
+  MACDClosePrices: number[];
+  setMACDClosePrices: (arr: number[]) => void;
+};
+
+const useMACD = create<MACDPrices>(set => ({
+  MACDClosePrices: [],
+  setMACDClosePrices: arr => set({ MACDClosePrices: arr }),
+}));
+
 export {
   useTickerTapeDisplay,
   useCurrentCryptoId,
@@ -391,4 +402,5 @@ export {
   useWhyAlpsRef,
   useHowAlpsRef,
   useWhatAlpsRef,
+  useMACD,
 };
