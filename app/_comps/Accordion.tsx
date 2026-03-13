@@ -43,7 +43,10 @@ function Accordion() {
       variants={parentVariant}
       initial="hidden"
       animate="show"
-      className={cn("flex h-full w-full flex-col gap-3 rounded-lg p-0", "bg-slate-500/10")}
+      className={cn(
+        "flex h-full w-full flex-col gap-3 rounded-lg p-0",
+        "overflow-y-scroll bg-slate-500/10"
+      )}
     >
       {cryptoData?.buy !== "" && (
         <Comp
@@ -112,7 +115,7 @@ function Comp({
   return (
     <div
       className={cn(
-        `relative w-full ${!show ? "h-12" : "h-32"} p-3 font-light transition-all duration-500`
+        `relative w-full ${!show ? "h-12" : "h-48"} p-3 font-light transition-all duration-500`
       )}
     >
       <motion.div
@@ -129,7 +132,7 @@ function Comp({
 
       <motion.p
         className={`my-2 overflow-y-auto text-[10px] tracking-wider text-[var(--secondarytext)] transition-all ease-in-out ${
-          show ? `opacity-100 duration-300` : "max-h-0 opacity-0 duration-0"
+          show ? `opacity-100 duration-500` : "opacity-0 duration-0"
         }`}
         style={{ maxHeight: show ? `${maxHeight * 4}px` : 0 }} //
       >

@@ -80,10 +80,6 @@ function CryptoDash() {
                 className="flex h-[calc(100vh-150px)] flex-col gap-4 pb-2"
               >
                 <CoinHeading />
-                {/* <Signals includeHeading={true} />
-                <Indicators />
-                <Stats />
-                <LiveStats includeHeading={true} /> */}
                 <Signals includeHeading={true} />
                 <LiveStats includeHeading={true} />
                 <div className="flex min-h-0 flex-1 flex-col gap-1">
