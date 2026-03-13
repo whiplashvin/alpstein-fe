@@ -107,7 +107,8 @@ function Comp({
   numItems?: number;
 }) {
   const show = activeIndex === index;
-  const maxHeight = numItems === 4 ? 28 : 48;
+
+  const maxHeight = numItems === 4 ? 36 : 48;
   return (
     <div
       className={cn(
@@ -128,8 +129,9 @@ function Comp({
 
       <motion.p
         className={`my-2 overflow-y-auto text-[10px] tracking-wider text-[var(--secondarytext)] transition-all ease-in-out ${
-          show ? `max-h-${maxHeight} opacity-100 duration-300` : "max-h-0 opacity-0 duration-0"
+          show ? `opacity-100 duration-300` : "max-h-0 opacity-0 duration-0"
         }`}
+        style={{ maxHeight: show ? `${maxHeight * 4}px` : 0 }} //
       >
         {content}
       </motion.p>
