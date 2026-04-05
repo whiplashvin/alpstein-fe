@@ -170,7 +170,7 @@ function Indicator({
         {label === "EMA" || label === "SMA" ? (
           <div>
             <select
-              className="w-12 outline-none"
+              className="w-10 outline-none md:w-12"
               onChange={e => timeFrameSelector?.(Number(e.target.value))}
               value={timeFrame}
             >
@@ -192,7 +192,6 @@ function Indicator({
           ""
         )}
       </div>
-      {/* <span className="text-base font-medium text-[var(--primarytext)] 2xl:text-lg">{val}</span> */}
       <span className="text-sm font-light text-[var(--primarytext)]">{val}</span>
     </motion.div>
   );

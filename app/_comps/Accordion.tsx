@@ -134,7 +134,7 @@ function Comp({
         className={`my-2 overflow-y-auto text-[10px] tracking-wider text-[var(--secondarytext)] transition-all ease-in-out ${
           show ? `opacity-100 duration-500` : "opacity-0 duration-0"
         }`}
-        style={{ maxHeight: show ? `${maxHeight * 4}px` : 0 }} //
+        style={{ maxHeight: show ? `${maxHeight * 4}px` : 0 }}
       >
         {content}
       </motion.p>

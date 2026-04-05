@@ -36,7 +36,6 @@ function Signals({ includeHeading }: { includeHeading: boolean }) {
       initial="hidden"
       animate="show"
       variants={parentVariant}
-      // key={`${currentCryptoId}-${positionDisplayed}`}
       className={cn("group relative flex w-full flex-col gap-1 rounded-lg opacity-80")}
     >
       {includeHeading && (
@@ -108,7 +107,6 @@ function Card({ cryptoData: d }: { cryptoData: CryptoData }) {
             </button>
           )}
         </div>
-        {/* <span className="text-base font-medium text-[var(--primarytext)] xl:text-lg"> */}
         <span className="text-sm font-light text-[var(--primarytext)]">{d.position}</span>
       </div>
       <div
@@ -127,7 +125,6 @@ function Card({ cryptoData: d }: { cryptoData: CryptoData }) {
             ? "Buy"
             : "Sell"}
         </span>
-        {/* <span className="text-base font-medium text-[var(--primarytext)] xl:text-lg"> */}
         <span className="text-sm font-light text-[var(--primarytext)]">
           {(d.position === "long" || d.position === "unclear") && positionDisplayed === "long"
             ? d.buyprice
@@ -144,7 +141,6 @@ function Card({ cryptoData: d }: { cryptoData: CryptoData }) {
           <GrMoney size={15} className="" />
           Take Profit
         </span>
-        {/* <span className="text-base font-medium text-[var(--primarytext)] xl:text-lg"> */}
         <span className="text-sm font-light text-[var(--primarytext)]">
           {(d.position === "long" || d.position === "unclear") && positionDisplayed === "long"
             ? d.takeprofit
@@ -161,7 +157,6 @@ function Card({ cryptoData: d }: { cryptoData: CryptoData }) {
           <MdOutlineAnchor size={15} className="" />
           Stop Loss
         </span>
-        {/* <span className="text-base font-medium text-[var(--primarytext)] xl:text-lg"> */}
         <span className="text-sm font-light text-[var(--primarytext)]">
           {(d.position === "long" || d.position === "unclear") && positionDisplayed === "long"
             ? d.stoploss
@@ -178,9 +173,7 @@ function Card({ cryptoData: d }: { cryptoData: CryptoData }) {
           <IoRibbonSharp size={15} className="" />
           Risk/Reward
         </span>
-        {/* <span className="text-base text-[var(--primarytext)] md:font-medium xl:text-lg"> */}
         <span className="text-sm font-light text-[var(--primarytext)]">
-          {/* {d.position === "long" ? `1:${calcLongRR()}` : `1:${calcShortRR()}`} */}
           {(d.position === "long" || d.position === "unclear") && positionDisplayed === "long"
             ? `1:${calcLongRR()}`
             : `1:${calcShortRR()}`}

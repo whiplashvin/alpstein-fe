@@ -17,46 +17,39 @@ function page() {
           </h3>
           <p className="mt-5">
             The crypto market moves fast. News breaks every hour, prices shift in seconds, and
-            sentiment changes with a single tweet. For traders trying to stay informed, it&apos;s
-            exhausting—dozens of tabs open, endless scrolling, and still no clear picture of what
-            really matters.
+            sentiment changes with a single tweet. Staying on top of it means dozens of tabs,
+            endless scrolling, and still no clear picture of what actually matters.
           </p>
           <p className="my-5">
-            Alpstein solves this by doing the heavy lifting for you. It monitors trusted sources
-            like CoinTelegraph, The Block, and NewsBTC around the clock, pulling in the stories that
-            actually move markets.
+            Alpstein handles that for you. It monitors sources like CoinTelegraph, The Block, and
+            NewsBTC around the clock, pulling in the stories that move markets—and ignoring
+            everything that doesn&apos;t.
           </p>
-          <p>But it doesn&apos;t stop at collecting news. Alpstein uses AI to:</p>
+          <p>From there, AI takes over:</p>
           <ul className="my-2 flex list-disc flex-col gap-2 pl-6">
             <li>
-              Distill lengthy articles into actionable summaries—no more reading 10-minute deep
-              dives when you need answers now.
+              Articles get distilled into actionable summaries—skip the 10-minute deep dives when
+              you just need the signal.
             </li>
             <li>
-              Analyze market sentiment—whether the narrative is bullish, bearish, or sitting in
-              uncertain territory.
+              Market sentiment is analyzed across sources—bullish, bearish, or uncertain, with
+              reasoning attached.
             </li>
             <li>
-              Generate trading insights—price levels to watch, potential entry and exit points, and
-              risk-reward considerations.
+              Trading insights are generated—price levels to watch, potential entries and exits, and
+              risk-reward breakdowns.
             </li>
           </ul>
           <p className="mt-4">
-            Everything lands in one dashboard. Current prices, technical indicators, AI-generated
+            Everything lives in one dashboard. Current prices, technical indicators, AI-generated
             opinions, and live news—all synchronized and updating in real time. No tab switching. No
-            context switching. Just the information you need, when you need it.
+            context switching.
           </p>
           <p className="mt-4">
-            Alpstein started as a personal project born from frustration. The tools out there were
-            either too complex, too expensive, or didn&apos;t show their reasoning. So I built
-            something different—a platform that&apos;s transparent about how it thinks and why it
-            suggests what it does.
-          </p>
-          <p className="mt-4">
-            Every decision in Alpstein, from the microservices architecture to the way data flows
-            across the interface, has been made with one goal: help traders make informed decisions
-            faster. It&apos;s not about automating trades—it&apos;s about augmenting human judgment
-            with AI that shows its work.
+            Alpstein is transparent by design. Every AI opinion shows its reasoning—what data it
+            looked at, what levels it flagged, and why. It&apos;s not about automating
+            trades—it&apos;s about giving you better information, faster, so you can make your own
+            calls with confidence.
           </p>
         </div>
       </div>
