@@ -28,7 +28,7 @@ function page() {
           </p>
 
           <h4 className="mt-6 text-base font-semibold text-[var(--primarytext)]">Installation</h4>
-          <pre className="my-3 flex items-center justify-between rounded-lg bg-zinc-900 p-4 text-sm text-zinc-100">
+          <pre className="my-3 flex max-w-full items-center justify-between rounded-lg bg-zinc-900 p-4 text-sm text-wrap text-zinc-100">
             <code>brew install whiplashvin/whiplashvin/alpstein-tui</code>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ function page() {
           <p className="mt-3">No browser overhead, no mouse, no context switching. Just data.</p>
 
           <h4 className="mt-6 text-base font-semibold text-[var(--primarytext)]">Try it</h4>
-          <pre className="my-3 flex items-center justify-between rounded-lg bg-zinc-900 p-4 text-sm text-zinc-100">
+          <pre className="my-3 flex max-w-full items-center justify-between rounded-lg bg-zinc-900 p-4 text-sm text-wrap text-zinc-100">
             <code>brew install whiplashvin/whiplashvin/alpstein-tui{"\n"}alpstein-tui</code>
             <svg
               xmlns="http://www.w3.org/2000/svg"
