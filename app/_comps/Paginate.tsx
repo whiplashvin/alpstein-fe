@@ -23,22 +23,25 @@ function Paginate() {
         <button
           className="flex cursor-pointer items-center justify-center rounded-full p-1 text-[var(--primarytext)] hover:border hover:border-[var(--secondarytext)]"
           onClick={async () => {
-            const res = await axios.get(
-              `https://api.alpstein.tech/api/v1/live-cryptos?action=prev&limit=${Limit}&last_seen=${FirstSeenTimeStamp}|${FirstSeenId}`,
-              {
-                withCredentials: true,
-              }
-            );
-            setAllCryptos(res.data.data);
-            setCursor(
-              res.data.metadata.hasPrevPage,
-              res.data.metadata.hasNextPage,
-              res.data.metadata.lastSeenId,
-              res.data.metadata.lastSeenTime,
-              res.data.metadata.firstSeenId,
-              res.data.metadata.firstSeenTime
-            );
-            console.log(res.data.metadata);
+            try {
+              const res = await axios.get(
+                `${process.env.NEXT_PUBLIC_API_URL}/live-cryptos?action=prev&limit=${Limit}&last_seen=${FirstSeenTimeStamp}|${FirstSeenId}`,
+                {
+                  withCredentials: true,
+                }
+              );
+              setAllCryptos(res.data.data);
+              setCursor(
+                res.data.metadata.hasPrevPage,
+                res.data.metadata.hasNextPage,
+                res.data.metadata.lastSeenId,
+                res.data.metadata.lastSeenTime,
+                res.data.metadata.firstSeenId,
+                res.data.metadata.firstSeenTime
+              );
+            } catch (e) {
+              console.log(e);
+            }
           }}
         >
           <GoChevronLeft size={25} className="" />
@@ -48,22 +51,25 @@ function Paginate() {
         <button
           className="flex cursor-pointer items-center justify-center rounded-full p-1 text-[var(--primarytext)] hover:border hover:border-[var(--secondarytext)]"
           onClick={async () => {
-            const res = await axios.get(
-              `https://api.alpstein.tech/api/v1/live-cryptos?action=next&limit=${Limit}&last_seen=${LastSeenTimeStamp}|${LastSeenId}`,
-              {
-                withCredentials: true,
-              }
-            );
-            setAllCryptos(res.data.data);
-            setCursor(
-              res.data.metadata.hasPrevPage,
-              res.data.metadata.hasNextPage,
-              res.data.metadata.lastSeenId,
-              res.data.metadata.lastSeenTime,
-              res.data.metadata.firstSeenId,
-              res.data.metadata.firstSeenTime
-            );
-            console.log(res.data.metadata);
+            try {
+              const res = await axios.get(
+                `${process.env.NEXT_PUBLIC_API_URL}/live-cryptos?action=next&limit=${Limit}&last_seen=${LastSeenTimeStamp}|${LastSeenId}`,
+                {
+                  withCredentials: true,
+                }
+              );
+              setAllCryptos(res.data.data);
+              setCursor(
+                res.data.metadata.hasPrevPage,
+                res.data.metadata.hasNextPage,
+                res.data.metadata.lastSeenId,
+                res.data.metadata.lastSeenTime,
+                res.data.metadata.firstSeenId,
+                res.data.metadata.firstSeenTime
+              );
+            } catch (e) {
+              console.log(e);
+            }
           }}
         >
           <GoChevronRight size={25} className="" />

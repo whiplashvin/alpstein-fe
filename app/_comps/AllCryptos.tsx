@@ -153,8 +153,8 @@ function CryptoComp({ d, calc }: { d: CryptoData; calc: (num: number) => string 
         </div>
       </div>
       <h1 className="text-[8px] font-medium text-[var(--secondarytext)] 2xl:text-[10px]">
-        {d.heading.split(" ").length > 13
-          ? `${d.heading.split(" ").slice(0, 13).join(" ")} ...`
+        {d.heading.split("").length > 80
+          ? `${d.heading.split("").slice(0, 80).join("")} ...`
           : d.heading}
       </h1>
     </motion.li>
