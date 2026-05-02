@@ -36,8 +36,11 @@ function AuthenticatedNav() {
         }
       }
     }
-    getData();
-  }, [setUser, toggleShowModal, path]);
+
+    if (!currUser) {
+      getData();
+    }
+  }, [setUser, toggleShowModal, path, currUser]);
 
   useEffect(() => {
     setActivePath(path.toLowerCase());
