@@ -85,16 +85,15 @@ function StatsBarGraph() {
   };
 
   const labels = [
-    `${stats?.first.date.split(":")[0].split("-")[2]}/${stats?.first.date.split(":")[0].split("-")[1]}`,
-    `${stats?.second.date.split(":")[0].split("-")[2]}/${stats?.second.date.split(":")[0].split("-")[1]}`,
-    `${stats?.third.date.split(":")[0].split("-")[2]}/${stats?.third.date.split(":")[0].split("-")[1]}`,
-    `${stats?.fourth.date.split(":")[0].split("-")[2]}/${stats?.fourth.date.split(":")[0].split("-")[1]}`,
-    `${stats?.fifth.date.split(":")[0].split("-")[2]}/${stats?.fifth.date.split(":")[0].split("-")[1]}`,
-    `${stats?.sixth.date.split(":")[0].split("-")[2]}/${stats?.sixth.date.split(":")[0].split("-")[1]}`,
-    `${stats?.seventh.date.split(":")[0].split("-")[2]}/${stats?.seventh.date.split(":")[0].split("-")[1]}`,
+    `${stats?.first.date.split(":")[0].split("-")[2] || 0}/${stats?.first.date.split(":")[0].split("-")[1] || 0}`,
+    `${stats?.second.date.split(":")[0].split("-")[2] || 0}/${stats?.second.date.split(":")[0].split("-")[1] || 0}`,
+    `${stats?.third.date.split(":")[0].split("-")[2] || 0}/${stats?.third.date.split(":")[0].split("-")[1] || 0}`,
+    `${stats?.fourth.date.split(":")[0].split("-")[2] || 0}/${stats?.fourth.date.split(":")[0].split("-")[1] || 0}`,
+    `${stats?.fifth.date.split(":")[0].split("-")[2] || 0}/${stats?.fifth.date.split(":")[0].split("-")[1] || 0}`,
+    `${stats?.sixth.date.split(":")[0].split("-")[2] || 0}/${stats?.sixth.date.split(":")[0].split("-")[1] || 0}`,
+    `${stats?.seventh.date.split(":")[0].split("-")[2] || 0}/${stats?.seventh.date.split(":")[0].split("-")[1] || 0}`,
   ];
 
-  console.log(labels);
   const data = {
     labels,
     datasets: [
