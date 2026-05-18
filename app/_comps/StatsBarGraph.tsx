@@ -84,31 +84,30 @@ function StatsBarGraph() {
     },
   };
 
-  const date = new Date().getDate();
-  const month = new Date().getMonth();
-  const year = new Date().getFullYear();
-  const today = new Date(year, month, date);
+  const labels = [
+    `${stats?.first.date.split(":")[0].split("-")[2]}/${stats?.first.date.split(":")[0].split("-")[1]}`,
+    `${stats?.second.date.split(":")[0].split("-")[2]}/${stats?.second.date.split(":")[0].split("-")[1]}`,
+    `${stats?.third.date.split(":")[0].split("-")[2]}/${stats?.third.date.split(":")[0].split("-")[1]}`,
+    `${stats?.fourth.date.split(":")[0].split("-")[2]}/${stats?.fourth.date.split(":")[0].split("-")[1]}`,
+    `${stats?.fifth.date.split(":")[0].split("-")[2]}/${stats?.fifth.date.split(":")[0].split("-")[1]}`,
+    `${stats?.sixth.date.split(":")[0].split("-")[2]}/${stats?.sixth.date.split(":")[0].split("-")[1]}`,
+    `${stats?.seventh.date.split(":")[0].split("-")[2]}/${stats?.seventh.date.split(":")[0].split("-")[1]}`,
+  ];
 
-  const labels = Array.from({ length: 7 }, (_, i) => {
-    const d = new Date(today);
-    d.setDate(d.getDate() - (7 - i));
-
-    return `${d.getDate()}/${d.getMonth() + 1}`;
-  });
-
+  console.log(labels);
   const data = {
     labels,
     datasets: [
       {
         label: "Articles",
         data: [
-          stats?.seventh,
-          stats?.sixth,
-          stats?.fifth,
-          stats?.fourth,
-          stats?.third,
-          stats?.second,
-          stats?.first,
+          stats?.first.value,
+          stats?.second.value,
+          stats?.third.value,
+          stats?.fourth.value,
+          stats?.fifth.value,
+          stats?.sixth.value,
+          stats?.seventh.value,
         ],
         // backgroundColor: barColor,
         backgroundColor: "#a3b3ff",
@@ -121,7 +120,6 @@ function StatsBarGraph() {
   return (
     <div className="relative max-h-[100%] min-h-[100%] max-w-full rounded-xl border border-[var(--stats-comp-inner-border)]/50 bg-[var(--stats-comp-inner)]/60 p-2 shadow-lg shadow-gray-500/50">
       <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-300 to-transparent"></span>
-
       <Bar data={data} options={options} />
     </div>
   );

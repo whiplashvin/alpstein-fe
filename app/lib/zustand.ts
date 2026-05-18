@@ -305,14 +305,18 @@ const useUserModal = create<UserModal>(set => ({
   setShowUserModal: (show: boolean) => set({ showUserModal: show }),
 }));
 
+type statsData = {
+  date: string;
+  value: number;
+};
 type AppStats = {
-  seventh: number;
-  sixth: number;
-  fifth: number;
-  fourth: number;
-  third: number;
-  second: number;
-  first: number;
+  seventh: statsData;
+  sixth: statsData;
+  fifth: statsData;
+  fourth: statsData;
+  third: statsData;
+  second: statsData;
+  first: statsData;
   numLong: number;
   numShort: number;
   numUnclear: number;
