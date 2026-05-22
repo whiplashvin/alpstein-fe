@@ -20,6 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://alpstein.tech"),
   title: {
     template: "%s / Alpstein",
     default: "Alsptein",
